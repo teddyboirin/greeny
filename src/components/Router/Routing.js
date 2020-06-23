@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,10 +6,10 @@ import {
   Link
 } from "react-router-dom";
 
-import Defis from '../Defis/Defis';
-import Assoc from '../Assoc/Assoc';
-import Favoris from '../Favoris/Favoris';
-import Account from '../Account/Account';
+const Defis = lazy(() => import('../Defis/Defis'));
+const Assoc = lazy(() => import('../Assoc/Assoc'));
+const Favoris = lazy(() => import('../Favoris/Favoris'));
+const Account = lazy(() => import('../Account/Account'));
 
 function Routing() {
   return (
@@ -34,20 +34,22 @@ function Routing() {
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/assoc">
-            <Assoc />
-          </Route>
-          <Route path="/favoris">
-            <Favoris />
-          </Route>
-          <Route path="/account">
-            <Account />
-          </Route>
-          <Route path="/">
-            <Defis />
-          </Route>
-        </Switch>
+        <Suspense fallback={<div>Chargement...</div>}>
+          <Switch>
+            <Route path="/assoc">
+              <Assoc />
+            </Route>
+            <Route path="/favoris">
+              <Favoris />
+            </Route>
+            <Route path="/account">
+              <Account />
+            </Route>
+            <Route path="/">
+              <Defis />
+            </Route>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   );
