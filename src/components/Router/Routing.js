@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import './routing.scss'
+
 const Defis = lazy(() => import('../Defis/Defis'));
 const Assoc = lazy(() => import('../Assoc/Assoc'));
 const Favoris = lazy(() => import('../Favoris/Favoris'));
@@ -24,7 +26,7 @@ function Routing() {
               <Link to="/assoc">Associations</Link>
             </li>
             <li>
-              <Link to="/favoris">Mes Habitudes</Link>
+              <Link to="/favoris">Habitudes</Link>
             </li>
             <li>
               <Link to="/account">Compte</Link>
