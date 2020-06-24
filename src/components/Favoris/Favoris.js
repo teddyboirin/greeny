@@ -1,9 +1,10 @@
 import React from "react";
+import './favoris.scss';
 
 function Favoris(){
   return(
     <div className="favoris">
-      Favoris
+      <h1>Mes défis favoris</h1>
     </div>
   );
 }

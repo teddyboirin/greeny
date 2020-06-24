@@ -1,9 +1,10 @@
 import React from "react";
+import './assoc.scss';
 
 function Assoc(){
   return(
     <div className="assoc">
-      Assoc
+      <h1>Découvrez les association</h1>
     </div>
   );
 }
