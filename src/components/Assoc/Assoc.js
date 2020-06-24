@@ -4,7 +4,7 @@ import './assoc.scss';
 function Assoc(){
   return(
     <div className="assoc">
-      <h1>Découvrez les association</h1>
+      <h1 className="page_title">Découvrez les association</h1>
     </div>
   );
 }
