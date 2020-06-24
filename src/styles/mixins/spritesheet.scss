@@ -1,0 +1,75 @@
+@function imgCoord($l, $x) {
+
+	$out: 0;
+
+	@if $l > 1 {
+
+		$out: ((1 / ($l - 1)) * $x) * 100%;
+	}
+
+	@return $out;
+}
+
+/* EXEMPLE */
+
+/*
+
+|| IF BACKGROUND MASK ||
+
+.class{
+	@include maskIconCoord(2,4,5);
+}
+
+*/
+
+@mixin maskIconPath($path) {
+	mask-image: url($path);
+	mask-repeat: no-repeat;
+}
+
+@mixin maskIconCoord($item, $col, $row) {
+	$len: ($col * $row);
+	$y: 0;
+	mask-size: ($col * 100%) auto;
+	@for $i from 1 through $len {
+		$x: ($i - 1) % $col;
+		@if ($i - 1) > 0 and $x == 0 {
+			$y: $y + 1;
+		}
+		@if ($item == $i){
+			mask-position: imgCoord($col, $x) imgCoord($row, $y);
+		}
+	}
+}
+
+
+/* EXEMPLE */
+
+/*
+
+|| IF BACKGROUND MASK ||
+
+.class{
+	@include bgIconCoord(19, $col, $row)
+}
+
+*/
+
+@mixin bgIconPath($path) {
+	background-image: url($path);
+}
+
+@mixin bgIconCoord($item, $col, $row) {
+	$len: ($col * $row);
+	$y: 0;
+	background-size: ($col * 100%) auto;
+	@for $i from 1 through $len {
+		$x: ($i - 1) % $col;
+		@if ($i - 1) > 0 and $x == 0 {
+			$y: $y + 1;
+		}
+		@if ($item == $i){
+			background-position: imgCoord($col, $x) imgCoord($row, $y);
+		}
+	}
+}

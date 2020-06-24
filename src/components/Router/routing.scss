@@ -1,3 +1,5 @@
+@import '../../styles/mixins/spritesheet.scss';
+
 nav {
   width: fit-content;
   box-shadow: 0px 4px 12px rgba(112, 112, 112, 0.25);
@@ -6,10 +8,10 @@ nav {
   right: 2%;
   top: 50%;
   transform: translateY(-50%);
-  
+
   ul {
     padding: 1rem;
-    height: 20rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,30 +35,32 @@ nav {
 
     &:first-of-type {
       &:before {
-        mask-image: url('../../assets/defis.svg');
-        height: 2rem;
+        @include maskIconCoord(4,6,6);
+        width: 2.3rem;
+        height: 2.3rem;  
       }
     }
 
     &:nth-of-type(2) {
 
       &:before {
-        mask-image: url('../../assets/assoc.svg');
-        height: 2rem;
+        @include maskIconCoord(3,6,6);
+        width: 2.3rem;
+        height: 2.3rem;   
       }
     }
 
     &:nth-of-type(3) {
 
       &:before {
-        mask-image: url('../../assets/favoris.svg');
+        @include maskIconCoord(1,6,6);
       }
     } 
 
     &:last-of-type {
 
       &:before {
-        mask-image: url('../../assets/account.svg');
+        @include maskIconCoord(2,6,6);
       }
     }
     
@@ -64,10 +68,10 @@ nav {
       content: "";
       background-color: black;
       width: 2rem;
-      height: 1.5rem;
+      height: 1.8rem;
       mask: no-repeat center;
+      mask-image: url('../../assets/spritesheet.svg');
     }
-
     
   }
 
