@@ -1,5 +1,4 @@
 import React from "react";
-import './assoc.scss';
 
 function Assoc(){
   return(
