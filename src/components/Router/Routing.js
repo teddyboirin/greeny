@@ -26,7 +26,7 @@ function Routing() {
               <Link to="/assoc">Associations</Link>
             </li>
             <li>
-              <Link to="/favoris">Habitudes</Link>
+              <Link to="/favoris">Favoris</Link>
             </li>
             <li>
               <Link to="/account">Compte</Link>
