@@ -10,9 +10,10 @@
     margin-right: 12%;
   }
 
-  h3 {
+  .page_subtitle {
     position: absolute;
-    margin: -9% 0 0 5rem;
+    top: 17%;
+    margin-left: 5rem;
     display: flex;
     align-items: center;
 
@@ -38,10 +39,18 @@
     }
   }
 
-  .defis_categ_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .account_inner_right {
+    padding-left: 4rem;
+
+    .defis_categ_container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    h3 {
+      color: $grey;
+      font-weight: 500;
+    }
   }
 
   .defis_categ_bloc {
