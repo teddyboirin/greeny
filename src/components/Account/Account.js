@@ -10,18 +10,13 @@ function Account(props){
     colorWhite: "#fff"
   })
 
-  function handleClick() {
+  function handleToggle() {
     setToggle({ 
-      show : !toggle.show
+      show : !toggle.show,
+      colorGreen : toggle.colorWhite,
+      colorWhite : toggle.colorGreen
     })
   }
-
-  // function handleToggle() {
-  //   setToggle({ 
-  //     colorGreen : toggle.colorWhite,
-  //     colorWhite : toggle.colorGreen
-  //   })
-  // }
 
   return(
     <div className="account">
@@ -31,9 +26,9 @@ function Account(props){
       <div className="account_inner_bloc">
 
         <div className="account_inner_right">
-          <div className="account_tab" /*onClick={handleToggle}*/>
+          <div className="account_tab" onClick={handleToggle}>
             <h3 onClick={()=> { setToggle(!toggle.show) }} style={{background : toggle.colorGreen, color : toggle.colorWhite}}>Votre évolution</h3>
-            <h3 onClick={handleClick} style={{background : toggle.colorWhite, color : toggle.colorGreen}}>Vos défis récurrents</h3>
+            <h3 onClick={handleToggle} style={{background : toggle.colorWhite, color : toggle.colorGreen}}>Vos défis récurrents</h3>
           </div>
 
           { !toggle.show ? (
@@ -47,6 +42,7 @@ function Account(props){
                 <Category categ='Au travail' points="15pts"/>
               </div>
               <h3>Total des points accumulés</h3>
+              <p></p>
             </div>
           ) : (
 
