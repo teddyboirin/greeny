@@ -12,6 +12,7 @@ const Defis = lazy(() => import('../Defis/Defis'));
 const Assoc = lazy(() => import('../Assoc/Assoc'));
 const Favoris = lazy(() => import('../Favoris/Favoris'));
 const Account = lazy(() => import('../Account/Account'));
+const SignUp = lazy(() => import('../SignUp/SignUp'));
 
 function Routing() {
   return (
@@ -20,7 +21,7 @@ function Routing() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Défis</Link>
+              <Link to="/defis">Défis</Link>
             </li>
             <li>
               <Link to="/assoc">Associations</Link>
@@ -47,8 +48,11 @@ function Routing() {
             <Route path="/account">
               <Account />
             </Route>
-            <Route path="/">
+            <Route path="/defis">
               <Defis />
+            </Route>
+            <Route path="/">
+              <SignUp />
             </Route>
           </Switch>
         </Suspense>
