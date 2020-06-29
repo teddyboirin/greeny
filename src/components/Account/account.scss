@@ -133,6 +133,7 @@
     box-shadow: 0px 4px 12px rgba(144, 144, 144, 0.25);
     border-radius: 10px;
     width: 35rem;
+    position: relative;
   }
 
   .recurrence {
@@ -163,6 +164,28 @@
 
     .defi__bottom .defi_bfr:before {
       transform: rotate(-90deg);
+    }
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: $grey;
+    }
+
+    input[type="file"] {
+      opacity: 0;
+      height: 4rem;
+      width: 4rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 

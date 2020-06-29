@@ -10,6 +10,16 @@ function Account(props){
     colorWhite: "#fff"
   })
 
+  const [file, setFile] = useState({
+    image: null
+  })
+
+  function handleChange(event) {
+    setFile({
+      image: URL.createObjectURL(event.target.files[0])
+    })
+  }
+
   function handleToggle() {
     setToggle({ 
       show : !toggle.show,
@@ -57,7 +67,13 @@ function Account(props){
           )}
         </div>
 
-        <div className="bloc_info"></div>
+        <div className="bloc_info">
+          <div className="avatar">
+            <input type="file" accept=".jpg, .jpeg, .png" onChange={handleChange}/>
+            <img src={file.image} alt=""/>
+          </div>
+        </div>
+
       </div>
     </div>
   );
