@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './defis.scss';
 import Defi from "../global/Defi";
+import DefiDescription from "../global/DefiDescription";
 
 function DefisCategory(props){
 
@@ -33,14 +34,36 @@ function DefisCategory(props){
     ]
   })
 
+  const [defiClicked, setDefiClicked] = useState(false)
+
+  const [chosenDefi, setChosenDefi] = useState({
+    name: '',
+    points: 0
+  })
+
+  const onClick = (value) => {
+    setDefiClicked(value.defiClicked)
+    setChosenDefi({
+      name: value.name,
+      points: value.points
+    })
+    console.log(value.name)
+  }
+
   return(
     <div>
-      <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ} </h1>
-      <div className="defis_container">
-        {defis[0].defis.map((defi, i) => {
-          return <Defi key={i} defi={defi.name} points={defi.points}/>
-        })}
-      </div>
+      {defiClicked === false ? (
+        <div>
+          <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ} , name : {chosenDefi.name}</h1>
+          <div className="defis_container">
+            {defis[0].defis.map((defi, i) => {
+              return <Defi onClick={onClick} key={i} defi={defi.name} points={defi.points}/>
+            })}
+          </div>
+        </div>
+      ) : (
+        <DefiDescription name={chosenDefi.name} points={chosenDefi.points} />
+      )}
     </div>
   )
 }
