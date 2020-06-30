@@ -1,0 +1,51 @@
+@import '../../App.scss';
+
+.SignUp{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: $lightGreen;
+}
+
+.SignUp__part{
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  input{
+    border: none;
+    border-bottom: 2px solid #EAEAEA;
+    padding-bottom: 10px;
+    &::placeholder{
+      font-weight: bold;
+      color: #EAEAEA;
+      font-size: 16px;
+    }
+  }
+
+  button{
+    padding: 8px;
+    background: #FFF;
+    border: 2px solid #02C39A;
+    color: #02C39A;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.SignUp__part--2{
+  border-radius: 40px;
+  background: #FFF;
+  flex-direction: column;
+}
+
+.SignUp__top{
+  display: flex;
+}

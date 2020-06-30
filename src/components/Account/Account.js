@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './account.scss';
-import Category from "../Category/Category";
-import Defi from "../global/Defi";
+import Reccurent from "./Reccurent";
+import Categories from "./Categories";
 
 function Account(props){
   const [toggle, setToggle] = useState({
@@ -44,27 +44,12 @@ function Account(props){
 
           { !toggle.show ? (
             <div>
-              <div className="defis_categ_container">
-                <Category categ='Alimentation' points="40pts"/>
-                <Category categ='Energie' points="20pts"/>
-                <Category categ='Déchets' points="12pts"/>
-                <Category categ='Déplacements' points="8pts"/>
-                <Category categ='DIY' points="8pts"/>
-                <Category categ='Au travail' points="15pts"/>
-              </div>
+              <Categories />
               <h3>Total des points accumulés</h3>
               <p></p>
             </div>
           ) : (
-
-            <div className="recurrence">
-              <Defi points='5' defi='Consommer des oeufs de poule élevé en plein air'/>
-              <Defi points='15' defi='Consommer au maximum des produits frais' />
-              <Defi points='10' defi='Acheter un calendrier des fruits et légumes de saison' />
-              <Defi points='8' defi='Éviter au maximum les plats préparés industriels' />
-              <Defi points='20' defi='Prioriser les aliments encore consommables' />
-              <Defi points='10' defi='Faire l’inventaire de ses placards avant de faire les courses' />
-            </div>
+            <Reccurent />
           )}
         </div>
 
