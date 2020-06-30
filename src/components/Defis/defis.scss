@@ -1,5 +1,8 @@
 @import '../../App.scss';
 
+$bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightOrange;
+$colors: $darkPink, $darkYellow, $darkGreen, $darkBlue, $darkRed, $darkOrange;
+
 .defis {
   margin-top: -6%;
 
@@ -10,60 +13,24 @@
     margin: 0 10%;
   }
 
+  @each $bgColor in $bgColors {
+    .defis_categ_bloc:nth-of-type(#{index($bgColors, $bgColor)}) {
+      background-color: $bgColor; 
+    }
+  }
+
+  @each $color in $colors {
+    .defis_categ_bloc:nth-of-type(#{index($colors, $color)}) h2 {
+      color: $color;
+    }
+  }
+
   .defis_categ_bloc {
     width: 18.875rem;
     height: 18.875rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 2px solid transparent;
     transition: border .3s ease-in-out;
-
-    &:first-of-type {
-      background-color: $lightPink;
-
-      h2 {
-        color: $darkPink;
-      }
-    }
-
-    &:nth-of-type(2) {
-      background-color: $lightYellow;
-
-      h2 {
-        color: $darkYellow;
-      }
-    }
-
-    &:nth-of-type(3) {
-      background-color: $lightGreen;
-
-      h2 {
-        color: $darkGreen;
-      }
-    }
-
-    &:nth-of-type(4) {
-      background-color: $lightBlue;
-
-      h2 {
-        color: $darkBlue;
-      }
-    }
-
-    &:nth-of-type(5) {
-      background-color: $lightRed;
-
-      h2 {
-        color: $darkRed;
-      }
-    }
-
-    &:nth-of-type(6) {
-      background-color: $lightOrange;
-
-      h2 {
-        color: $darkOrange;
-      }
-    }
 
     h2 {
       font-weight: bold;
@@ -87,28 +54,10 @@
 
     &:hover {
 
-      &:first-of-type, &:first-of-type div {
-        border-color: $darkPink;
-      }
-  
-      &:nth-of-type(2), &:nth-of-type(2) div {
-        border-color: $darkYellow;
-      }
-  
-      &:nth-of-type(3), &:nth-of-type(3) div {
-        border-color: $darkGreen;
-      }
-  
-      &:nth-of-type(4), &:nth-of-type(4) div {
-        border-color: $darkBlue;
-      }
-  
-      &:nth-of-type(5), &:nth-of-type(5) div {
-        border-color: $darkRed;
-      }
-  
-      &:nth-of-type(6), &:nth-of-type(6) div {
-        border-color: $darkOrange;
+      @each $color in $colors {
+        &:nth-of-type(#{index($colors, $color)}), &:nth-of-type(#{index($colors, $color)}) div {
+          border-color: $color;
+        }
       }
     }
   }
