@@ -35,8 +35,8 @@ function Reccurent(){
 
   return(
     <div className="recurrence">
-      {defiReccurent[0].defis.map((defi) => {
-        return <Defi points={defi.points} defi={defi.name}/>
+      {defiReccurent[0].defis.map((defi, i) => {
+        return <Defi key={i} points={defi.points} defi={defi.name}/>
       })}
     </div>
   )

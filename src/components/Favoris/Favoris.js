@@ -37,8 +37,8 @@ function Favoris(){
     <div className="favoris">
       <h1 className="page_title">Mes défis favoris</h1>
       <div className="favoris_container">
-      {defiFav[0].defis.map((defi) => {
-        return <Defi defi={defi.name} points={defi.points}/>
+      {defiFav[0].defis.map((defi, i) => {
+        return <Defi key={i} defi={defi.name} points={defi.points}/>
       })}
       </div>
     </div>

@@ -35,8 +35,8 @@ function Categories(){
 
   return(
     <div className="defis_categ_container">
-      {categories[0].categories.map((category) => {
-        return <Category categ={category.name} points={category.points + 'pts'}/>
+      {categories[0].categories.map((category, i) => {
+        return <Category key={i} categ={category.name} points={category.points + 'pts'}/>
       })}
     </div>
   )
