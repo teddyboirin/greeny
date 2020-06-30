@@ -21,17 +21,26 @@ function SignUp() {
     }))
   }
 
+  const formSignUp = () => {
+    setSignup(true)
+  }
+
+  const formSignIn = () => {
+    setSignup(false)
+  }
+
   return (
     <div className='SignUp'>
-      <div className='SignUp__part SignUp__part--1'>
-        Greeny
+      <div className='SignUp_part SignUp_part_1'>
+        <img className='SignUp_logo_mobile' src={require('../../assets/logo-green.svg')} />
+        <img className='SignUp_logo_desktop' src={require('../../assets/logo.svg')} />
       </div>
-      <div className='SignUp__part SignUp__part--2'>
-        <div className='SignUp__top'>
-          <div>
+      <div className='SignUp_part SignUp_part_2'>
+        <div className='SignUp_top'>
+          <div className={signup === true ? 'active' : ''} onClick={formSignUp}>
             Se connecter
           </div>
-          <div>
+          <div className={signup === false ? 'active' : ''} onClick={formSignIn}>
             S'inscrire
           </div>
         </div>
@@ -51,7 +60,7 @@ function SignUp() {
               value={registrate.password} 
               onChange={handleChange}
             />
-            <button type="submit" >Se connecter</button>
+            <button type="submit">Continuer</button>
           </form>
         ) : (
           <form>
@@ -91,7 +100,7 @@ function SignUp() {
               onChange={handleChange}
             />
 
-            <button type="submit" >S'inscrire</button>
+            <button type="submit" >Continuer</button>
           </form>
         )}
       </div>

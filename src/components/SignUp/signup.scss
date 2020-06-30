@@ -1,51 +1,115 @@
 @import '../../App.scss';
 
 .SignUp{
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  background: $lightGreen;
+  background: #FFF;
+  overflow: hidden;
+  @media(min-width: 1000px){
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
 }
 
-.SignUp__part{
-  height: 100vh;
-  width: 50vw;
+.SignUp_part{
   display: flex;
   align-items: center;
   justify-content: center;
-
+  @media(min-width: 1000px){
+    height: 100vh;
+  }
   form{
     display: flex;
     flex-direction: column;
+    width: 280px;
   }
 
   input{
     border: none;
-    border-bottom: 2px solid #EAEAEA;
+    border-bottom: 1px solid #898989;
     padding-bottom: 10px;
+    margin: 20px 0;
+    font-family: $primaryFont;
+    color: #898989;
+    font-size: 16px;
     &::placeholder{
-      font-weight: bold;
-      color: #EAEAEA;
+      font-family: $primaryFont;
+      color: #898989;
       font-size: 16px;
+    }
+    &:focus{
+      outline: none;
     }
   }
 
   button{
-    padding: 8px;
-    background: #FFF;
-    border: 2px solid #02C39A;
-    color: #02C39A;
-    font-weight: bold;
-    font-size: 16px;
+    font-family: $primaryFont;
+    padding: 10px;
+    background: $neonGreen;
+    border: none;
+    color: #FFF;
+    font-size: 18px;
+    width: 200px;
+    margin: 50px auto 0 auto;
+    border-radius: 10px;
+    &:hover{
+      cursor: pointer;
+    }
+    &:focus{
+      outline: none;
+    }
   }
 }
 
-.SignUp__part--2{
-  border-radius: 40px;
-  background: #FFF;
+.SignUp_part_2{
   flex-direction: column;
+  @media(min-width: 1000px){
+    width: 45vw;
+  }
 }
 
-.SignUp__top{
+.SignUp_part_1{
+  @media(min-width: 1000px){
+    background: $neonGreen;
+    height: 120vh;
+    transform: translateY(-10vh);
+    width: 55vw;
+    border-radius: 0 100% 100% 0;
+  }
+}
+
+.SignUp_top{
   display: flex;
+  margin-bottom: 50px;
+  font-size: 20px;
+  color: #898989;
+  @media(min-width: 1000px){
+    font-size: 24px;
+  }
+  div{
+    padding: 10px 20px;
+    border-bottom: 1px solid #898989;
+    &:hover{
+      cursor: pointer;
+    }
+    &.active{
+      color: #000;
+      font-weight: 600;
+      border-bottom: 2px solid #000;
+    }
+  }
+}
+
+.SignUp_logo_mobile{
+  margin: 30px 0 40px 0;
+  @media(min-width: 1000px){
+    display: none;
+  }
+}
+
+.SignUp_logo_desktop{
+  display: none;
+  @media(min-width: 1000px){
+    display: block
+  }
 }
