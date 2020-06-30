@@ -1,5 +1,6 @@
 @import '../../App.scss';
 $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightOrange;
+$nth: 1, 2, 3, 4, 5, 6;
 
 .account {
 
@@ -79,7 +80,7 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
   }
 
   @each $bgColor in $bgColors {
-    .defis_categ_bloc#{$bgColor} {
+    .defis_categ_bloc:nth-of-type(#{$nth}) div {
       background-color: $bgColor;
     }
   }
@@ -148,16 +149,23 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
     box-shadow: 0px 4px 12px rgba(144, 144, 144, 0.25);
     border-radius: 10px;
     width: 375.23px;
-    height: 40rem;
+    height: 34rem;
     position: relative;
   }
 
   .recurrence {
+    height: 500px;
+    overflow: scroll;
+
     .defi {
       width: 36rem;
       height: 4rem;
       flex-direction: row;
       align-items: center;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
 
       .defi_text {
         color: #000;
@@ -222,7 +230,7 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
 
   @media screen and (min-width: 786px) {
     .recurrence {
-        margin: 0 2.563rem 2.563rem 0;
+        margin: 0 7.563rem 2.563rem 0;
     }
   }
 }
