@@ -6,7 +6,7 @@ function Favoris(){
   return(
     <div className="favoris">
       <h1 className="page_title">Mes défis favoris</h1>
-      <div className="favoris__container">
+      <div className="favoris_container">
         <Defi points='5' defi='Consommer des oeufs de poule élevé en plein air'/>
         <Defi points='15' defi='Consommer au maximum des produits frais' />
         <Defi points='10' defi='Acheter un calendrier des fruits et légumes de saison' />

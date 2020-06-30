@@ -13,7 +13,7 @@
   margin: 30px 0;
 }
 
-.defi__top{
+.defi_top{
   display: flex;
   justify-content: space-between;
 
@@ -37,12 +37,12 @@
   }
 }
 
-.defi__text{
+.defi_text{
   font-weight: bold;
   font-size: 20px;
 }
 
-.defi__bottom{
+.defi_bottom{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@
   }
 }
 
-.defi__top, .defi__bottom {
+.defi_top, .defi_bottom {
   .defi_bfr:before {
     content: "";
     mask-image: url('../../assets/spritesheet.svg');

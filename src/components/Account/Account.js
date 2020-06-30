@@ -30,11 +30,12 @@ function Account(props){
 
   return(
     <div className="account">
-      <h1 className="page_title">Hello</h1>
-      <h3 className="page_subtitle">Un nouveau jour, un nouveau défi</h3>
+      <div className="title_account">
+        <h1 className="page_title">Hello</h1>
+        <h3 className="page_subtitle">Un nouveau jour, un nouveau défi</h3>
+      </div>
 
       <div className="account_inner_bloc">
-
         <div className="account_inner_right">
           <div className="account_tab" onClick={handleToggle}>
             <h3 onClick={()=> { setToggle(!toggle.show) }} style={{background : toggle.colorGreen, color : toggle.colorWhite}}>Votre évolution</h3>

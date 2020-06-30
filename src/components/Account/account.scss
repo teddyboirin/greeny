@@ -1,19 +1,26 @@
 @import '../../App.scss';
+$bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightOrange;
 
 .account {
-  .page_title {
-    font-size: 4.5rem;
+
+  .title_account {
+    position: absolute;
+    top: 0;
+
+    .page_title {
+      font-size: 4.5rem;
+      position: static;
+    }
   }
 
   .account_inner_bloc {
-    display: flex;
-    margin-right: 12%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
     margin-top: -2%;
   }
 
   .page_subtitle {
-    position: absolute;
-    top: 17%;
     margin-left: 5rem;
     display: flex;
     align-items: center;
@@ -71,46 +78,54 @@
     }
   }
 
+  @each $bgColor in $bgColors {
+    .defis_categ_bloc#{$bgColor} {
+      background-color: $bgColor;
+    }
+  }
+
   .defis_categ_bloc {
     width: 11.75rem;
     height: 11.75rem;
     box-shadow: 0px 4px 12px rgba(145, 145, 145, 0.25);
 
-    &:first-of-type {
-      div {
-        background-color: $lightPink;
-      }
-    }
+    
 
-    &:nth-of-type(2) {
-      div {
-        background-color: $lightYellow;
-      }
-    }
+    // &:first-of-type {
+    //   div {
+    //     background-color: $lightPink;
+    //   }
+    // }
 
-    &:nth-of-type(3) {
-      div {
-        background-color: $lightGreen;
-      }
-    }
+    // &:nth-of-type(2) {
+    //   div {
+    //     background-color: $lightYellow;
+    //   }
+    // }
 
-    &:nth-of-type(4) {
-      div {
-        background-color: $lightBlue;
-      }
-    }
+    // &:nth-of-type(3) {
+    //   div {
+    //     background-color: $lightGreen;
+    //   }
+    // }
 
-    &:nth-of-type(5) {
-      div {
-        background-color: $lightRed;
-      }
-    }
+    // &:nth-of-type(4) {
+    //   div {
+    //     background-color: $lightBlue;
+    //   }
+    // }
 
-    &:nth-of-type(6) {
-      div {
-        background-color: $lightOrange;
-      }
-    }
+    // &:nth-of-type(5) {
+    //   div {
+    //     background-color: $lightRed;
+    //   }
+    // }
+
+    // &:nth-of-type(6) {
+    //   div {
+    //     background-color: $lightOrange;
+    //   }
+    // }
 
     h2 {
       font-weight: lighter;
@@ -132,25 +147,26 @@
   .bloc_info {
     box-shadow: 0px 4px 12px rgba(144, 144, 144, 0.25);
     border-radius: 10px;
-    width: 35rem;
+    width: 375.23px;
+    height: 40rem;
     position: relative;
   }
 
   .recurrence {
     .defi {
-      width: 30rem;
+      width: 36rem;
       height: 4rem;
       flex-direction: row;
       align-items: center;
 
-      .defi__text {
+      .defi_text {
         color: #000;
         font-weight: bold;
         width: 56%;
       }
     }
 
-    .defi__top {
+    .defi_top {
       .defi_bfr:before {
         content: none;
       }
@@ -162,7 +178,7 @@
       }  
     }
 
-    .defi__bottom .defi_bfr:before {
+    .defi_bottom .defi_bfr:before {
       transform: rotate(-90deg);
     }
   }
@@ -171,12 +187,27 @@
     display: flex;
     justify-content: center;
     margin: 2rem auto;
+    position: relative;
+
+    // &:before {
+    //   content: "";
+    //   mask-image: url('../../assets/spritesheet.svg');
+    //   background-color: #fff;
+    //   @include maskIconCoord(2, 6, 6);
+    //   width: 2rem;
+    //   height: 2rem;
+    //   position: absolute;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    // }
 
     img {
       width: 4rem;
       height: 4rem;
       border-radius: 50%;
       background-color: $grey;
+
+      
     }
 
     input[type="file"] {
