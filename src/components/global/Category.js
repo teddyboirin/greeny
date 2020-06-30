@@ -6,7 +6,7 @@ function Category(props){
     <div className="defis_categ_bloc">
       <div></div>
       <h2>{props.categ}</h2>
-      <h1>{props.points}pts</h1>
+      <h1>{props.points}</h1>
     </div>
   );
 }

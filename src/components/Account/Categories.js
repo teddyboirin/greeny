@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './account.scss';
-import Category from "../Category/Category";
+import Category from "../global/Category";
 
 function Categories(){
 
@@ -36,7 +36,7 @@ function Categories(){
   return(
     <div className="defis_categ_container">
       {categories[0].categories.map((category) => {
-        return <Category categ={category.name} points={category.points}/>
+        return <Category categ={category.name} points={category.points + 'pts'}/>
       })}
     </div>
   )

@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import './defis.scss';
-import Category from "../Category/Category";
+import Category from "../global/Category";
 
 function Defis(){
+
+  const categories = useState({
+    categories: [
+      {
+        name: 'Alimentation'
+      },
+      {
+        name: 'Énergie'
+      },
+      {
+        name: 'Déchets'
+      },
+      {
+        name: 'Déplacements'
+      },
+      {
+        name: 'DIY'
+      },
+      {
+        name: 'Au travail'
+      }
+    ]
+  })
+
   return(
     <div className="defis">
       <h1 className="page_title">Choisi une catégorie<br/>pour ton défi du jour</h1>
-      
       <div className="defis_categ_container">
-        <Category categ='Alimentation'/>
-        <Category categ='Energie'/>
-        <Category categ='Déchets'/>
-        <Category categ='Déplacements'/>
-        <Category categ='Diy'/>
-        <Category categ='Au travail'/>
+        {categories[0].categories.map((category) => {
+          return <Category categ={category.name}/>
+        })}
       </div>
 
     </div>
