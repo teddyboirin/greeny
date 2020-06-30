@@ -1,5 +1,7 @@
 @import '../../App.scss';
 
+$icons: 5, 9, 7, 10, 6, 11;
+
 .defis_categ_bloc {
   display: flex;
   justify-content: center;
@@ -16,57 +18,9 @@
     margin-bottom: -3rem;
   }
 
-  &:first-of-type {
-    div {
-
-      &:before {
-        @include bgIconCoord(5, 6, 6)
-      }
-    }
-  }
-
-  &:nth-of-type(2) {
-    div {
-
-      &:before {
-        @include bgIconCoord(9, 6, 6)
-      }
-    }
-  }
-
-  &:nth-of-type(3) {
-    div {
-
-      &:before {
-        @include bgIconCoord(7, 6, 6)
-      }
-    }
-  }
-
-  &:nth-of-type(4) {
-    div {
-
-      &:before {
-        @include bgIconCoord(10, 6, 6)
-      }
-    }
-  }
-
-  &:nth-of-type(5) {
-    div {
-
-      &:before {
-        @include bgIconCoord(6, 6, 6)
-      }
-    }
-  }
-
-  &:nth-of-type(6) {
-    div {
-
-      &:before {
-        @include bgIconCoord(11, 6, 6)
-      }
+  @each $icon in $icons {
+    &:nth-of-type(#{index($icons, $icon)}) div:before {
+      @include bgIconCoord($icon, 6, 6)
     }
   }
 
