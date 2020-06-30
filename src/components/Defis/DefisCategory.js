@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import './favoris.scss';
+import './defis.scss';
 import Defi from "../global/Defi";
 
-function Favoris(){
+function DefisCategory(props){
 
-  
-
-  const defiFav = useState({
+  const defis = useState({
     defis: [
       {
         points: 5,
@@ -36,15 +34,15 @@ function Favoris(){
   })
 
   return(
-    <div className="favoris">
-      <h1 className="page_title">Mes défis favoris</h1>
-      <div className="favoris_container">
-        {defiFav[0].defis.map((defi, i) => {
+    <div>
+      <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ} </h1>
+      <div className="defis_container">
+        {defis[0].defis.map((defi, i) => {
           return <Defi key={i} defi={defi.name} points={defi.points}/>
         })}
       </div>
     </div>
-  );
+  )
 }
 
-export default Favoris;
+export default DefisCategory
