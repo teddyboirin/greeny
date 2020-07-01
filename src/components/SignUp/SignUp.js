@@ -7,10 +7,12 @@ function SignUp() {
   const [signup , setSignup] = useState(true);
 
   const [registrate, setRegistrate] = useState({
+    email: "",
     nom: "",
     prenom: "",
-    email: "",
-    password: ""
+    password: "",
+    points: "0",
+    roles: ["1"],
   })
 
   const handleChange = (e) => {
@@ -29,26 +31,27 @@ function SignUp() {
     setSignup(false)
   }
 
-  const sendDetailsToServer = () => {
+  const sendDetailsToServer = (e) => {
+    e.preventDefault()
     if(registrate.nom.length && registrate.prenom.length && registrate.email.length && registrate.password.length ) {
         const userData ={
-            "nom": registrate.nom,
-            "prenom": registrate.prenom,
-            "email": registrate.email,
-            "password": registrate.password
+          "email": registrate.email,
+          "password": registrate.password,
+          "roles":registrate.roles,
+          "points": registrate.points,
+          "nom":registrate.nom,
+          "prenom":registrate.prenom
         }
-
-        axios.post(`http://127.0.0.1:8000/api/users`, userData)
-            .then((response) => {
-              console.log(response.userData);
-              redirectToTest()
-            })
-            .catch(function (error) {
-                console.log(error);
-            });    
-    } else {
-        console.log("rempli tous les champs")   
-    } 
+        //console.log(userData)
+        axios.post('http://127.0.0.1:8000/api/users', userData)
+        .then(function (response) {
+          console.log(response);
+          redirectToTest()
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+      }
   }
 
   const redirectToTest = () => {
@@ -87,9 +90,9 @@ function SignUp() {
               onChange={handleChange}
             />
             <button type="submit">Continuer</button>
-          </form>
+          </form >
         ) : (
-          <form>
+          <form onSubmit={sendDetailsToServer}>
             <input 
               type="text" 
               id="nom" 
