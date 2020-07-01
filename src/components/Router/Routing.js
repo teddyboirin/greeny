@@ -13,6 +13,7 @@ const Assoc = lazy(() => import('../Assoc/Assoc'));
 const Favoris = lazy(() => import('../Favoris/Favoris'));
 const Account = lazy(() => import('../Account/Account'));
 const SignUp = lazy(() => import('../SignUp/SignUp'));
+const TestCarbone = lazy(() => import('../TestCarbone/TestCarbone'));
 
 function Routing() {
   return (
@@ -39,6 +40,9 @@ function Routing() {
             renders the first one that matches the current URL. */}
         <Suspense fallback={<div>Chargement...</div>}>
           <Switch>
+            <Route path="/test">
+              <TestCarbone />
+            </Route>
             <Route path="/assoc">
               <Assoc />
             </Route>

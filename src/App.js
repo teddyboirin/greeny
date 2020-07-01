@@ -6,19 +6,23 @@ import SignUp from './components/SignUp/SignUp';
 
 import dotsUp from './assets/dots_up.png'
 import dotsDown from './assets/dots_down.png'
+import TestCarbone from './components/TestCarbone/TestCarbone';
 
 function App() {
   return (
     <div className="App">
-      {window.location.pathname === '/' ? (
-        <SignUp />
-      ) : (
+      {window.location.pathname === '/' ?  
+        <SignUp /> 
+      
+        : window.location.pathname === '/test' ? 
+          <TestCarbone /> 
+        : 
         <div>
           <img src={dotsUp} alt="dots_up"/>
           <Routing />
           <img className="dots_down" src={dotsDown} alt="dots_down"/>
         </div>
-      )}
+      }
     </div>
   );
 }
