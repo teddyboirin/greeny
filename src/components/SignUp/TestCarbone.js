@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import QuestionTest from './QuestionTest';
+import './testCarbone.scss';
 
 function TestCarbone() {
   const testEtape = useState({
@@ -99,9 +100,9 @@ function TestCarbone() {
       <img src={require('../../assets/logo-green.svg')} alt="logo"/>
 
       { !nextStep.show ? (
-        <div>
+        <div className="presentation_test">
           <h1>Découvre ton empreinte carbone</h1>
-          <p>Répondez aux questions suivantes le plus honnêtement possible pour connaître une estimation de votre empreinte carbone</p>
+          <p>Répondez aux questions suivantes le plus honnêtement possible<br/>pour connaître une estimation de votre empreinte carbone</p>
           <button onClick={cc}>Suivant</button>
         </div>
 
@@ -110,6 +111,7 @@ function TestCarbone() {
             if(etape.id === nextStep.step && i === etape.id) {
               return <QuestionTest 
                 key={i} 
+                id={etape.id + 1}
                 question={etape.question} 
                 reponseA={etape.reponseA} 
                 reponseB={etape.reponseB} 

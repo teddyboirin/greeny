@@ -3,8 +3,9 @@ import React from "react";
 function QuestionTest(props){
 
   return(
-    <div>
-      <h1>{props.question}</h1>
+    <div className="test_carbone_detail">
+      <span>Question {props.id} / 8</span>
+      <h2>{props.question}</h2>
 
       <ul>
         <li>{props.reponseA}</li>
@@ -13,7 +14,7 @@ function QuestionTest(props){
         <li>{props.reponseD}</li>
       </ul>
 
-      <button onClick={props.increment}>Suivant button</button>
+      <button onClick={props.increment}>Suivant</button>
     </div>
   );
 }
