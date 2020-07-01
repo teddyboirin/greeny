@@ -7,14 +7,19 @@ function QuestionTest(props){
       <span>Question {props.id} / 8</span>
       <h2>{props.question}</h2>
 
-      <ul>
-        <li>{props.reponseA}</li>
-        <li>{props.reponseB}</li>
-        <li>{props.reponseC}</li>
-        <li>{props.reponseD}</li>
-      </ul>
+      <div>
+        <ul>
+          <li>{props.reponseA}</li>
+          <li>{props.reponseB}</li>
+          <li>{props.reponseC}</li>
+          <li>{props.reponseD}</li>
+        </ul>
 
-      <button onClick={props.increment}>Suivant</button>
+        <div className="button_step">
+          <button onClick={props.deincrement}>Précédent</button>
+          <button onClick={props.increment}>Suivant</button>
+        </div>
+      </div>
     </div>
   );
 }

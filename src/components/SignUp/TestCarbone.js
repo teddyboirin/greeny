@@ -87,7 +87,14 @@ function TestCarbone() {
     }
   }
 
-  function cc(){
+  function deincrement() {
+    setNextStep({
+      step: nextStep.step - 1,
+      show: true
+    })
+  }
+
+  function showStep(){
     setNextStep({
       show : !nextStep.show,
       step : nextStep.step + 1
@@ -96,14 +103,17 @@ function TestCarbone() {
 
   return (
     <div className="test_carbone">
-      {console.log(nextStep.show)}
-      <img src={require('../../assets/logo-green.svg')} alt="logo"/>
+
+      <div className="header_test">
+        <img src={require('../../assets/logo-green.svg')} alt="logo"/>
+        <button onClick={() => window.location.assign('/')}>Connexion</button>
+      </div>
 
       { !nextStep.show ? (
         <div className="presentation_test">
           <h1>Découvre ton empreinte carbone</h1>
           <p>Répondez aux questions suivantes le plus honnêtement possible<br/>pour connaître une estimation de votre empreinte carbone</p>
-          <button onClick={cc}>Suivant</button>
+          <button onClick={showStep}>Suivant</button>
         </div>
 
         ) : ( 
@@ -118,6 +128,7 @@ function TestCarbone() {
                 reponseC={etape.reponseC} 
                 reponseD={etape.reponseD}
                 increment={increment}
+                deincrement={deincrement}
               />
             }
           })
