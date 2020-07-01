@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import './defi.scss'
 
 function Defi(props){
-
-  const [defiClicked, setDefiClicked] = useState(false)
 
   const onClick = () => {
     props.onClick({

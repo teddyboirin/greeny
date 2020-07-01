@@ -1,12 +1,102 @@
 @import '../../styles/var/var.scss';
 
-.DefiDescription{
+.DefiDescription, .DefiChecked{
   display: flex;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+}
+
+.DefiChecked{
+  background: $lightGreen;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+
+  h1{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.DefiChecked_points{
+  color: $neonGreen;
+  height: 5rem;
+  width: 5rem;
+  border: 2px dashed $neonGreen;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: relative;
+  margin: 70px 0;
+  span{
+    position: absolute;
+    &:first-child{
+      top: -7px;
+      right: 15px;
+      opacity: .8;
+    }
+    &:last-child{
+      top: -25px;
+      right: 3px;
+      opacity: .5;
+    }
+  }
+}
+
+.DefiChecked_button{
+  border: 2px solid $neonGreen;
+  padding: 20px 70px;
+  font-size: 22px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  &:hover{
+    cursor: pointer;
+    .DefiChecked_button_hover{
+      transform: translateX(0);
+      cursor: pointer;
+    }
+  }
+}
+
+.DefiChecked_button_hover{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $neonGreen;
+  border-radius: 50px;
+  border: 2px solid $neonGreen;
+  transform: translateX(-88%);
+  font-weight: bold;
+  transition: transform .8s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+
+  &::after{
+    @include bgIconCoord(13, 6, 6);
+    height: 40px;
+    width: 40px;
+    content: '';
+    background-image: url('../../assets/spritesheet.svg');
+    position: absolute;
+    right: 7px;
+  }
 }
 
 .DefiDescription_part{
@@ -15,6 +105,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: #FFF;
 
   h1{
     font-size: 1.7rem;

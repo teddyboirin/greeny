@@ -1,6 +1,7 @@
 import React , {useState} from "react";
 import './account.scss';
 import Defi from "../global/Defi";
+import DefiDescription from "../global/DefiDescription";
 
 function Reccurent(){
 
@@ -33,11 +34,32 @@ function Reccurent(){
     ]
   })
 
+  const [defiClicked, setDefiClicked] = useState(false)
+
+  const [chosenDefi, setChosenDefi] = useState({
+    name: '',
+    points: 0
+  })
+
+  const onClick = (value) => {
+    setDefiClicked(value.defiClicked)
+    setChosenDefi({
+      name: value.name,
+      points: value.points
+    })
+  }
+
   return(
-    <div className="recurrence">
-      {defiReccurent[0].defis.map((defi, i) => {
-        return <Defi key={i} points={defi.points} defi={defi.name}/>
-      })}
+    <div>
+      {defiClicked === false ? (
+        <div className="recurrence">
+        {defiReccurent[0].defis.map((defi, i) => {
+          return <Defi onClick={onClick} key={i} points={defi.points} defi={defi.name}/>
+        })}
+        </div>
+      ) : (
+        <DefiDescription name={chosenDefi.name} points={chosenDefi.points} />
+      )}
     </div>
   )
 }
