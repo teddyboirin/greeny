@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './signup.scss';
+const axios = require('axios');
 
 function SignUp() {
 
@@ -8,7 +9,6 @@ function SignUp() {
   const [registrate, setRegistrate] = useState({
     nom: "",
     prenom: "",
-    pseudo: "",
     email: "",
     password: ""
   })
@@ -29,6 +29,36 @@ function SignUp() {
     setSignup(false)
   }
 
+  const sendDetailsToServer = () => {
+    if(registrate.nom.length && registrate.prenom.length && registrate.email.length && registrate.password.length ) {
+        const userData ={
+            "nom": registrate.nom,
+            "prenom": registrate.prenom,
+            "email": registrate.email,
+            "password": registrate.password
+        }
+        console.log(userData)
+
+        axios.post(`http://127.0.0.1:8000/api/users`, userData)
+            .then(function (response) {
+                if(response.data.code === 200){
+                    redirectToTest()
+                } else{
+                  console.log("not working");
+              }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });    
+    } else {
+        console.log("rempli tous les champs")   
+    } 
+  }
+
+  const redirectToTest = () => {
+    window.location.assign('/test');
+}
+
   return (
     <div className='SignUp'>
       <div className='SignUp_part SignUp_part_1'>
@@ -48,9 +78,9 @@ function SignUp() {
           <form>
             <input 
               type="text" 
-              id="pseudo" 
-              placeholder="Pseudo" 
-              value={registrate.pseudo} 
+              id="nom" 
+              placeholder="Nom" 
+              value={registrate.nom} 
               onChange={handleChange}
             />
             <input 
@@ -79,13 +109,6 @@ function SignUp() {
               onChange={handleChange}
             />
             <input 
-              type="text" 
-              id="pseudo" 
-              placeholder="Pseudo" 
-              value={registrate.pseudo} 
-              onChange={handleChange}
-            />
-            <input 
               type="email" 
               id="email" 
               placeholder="Email" 
@@ -100,7 +123,7 @@ function SignUp() {
               onChange={handleChange}
             />
 
-            <button type="submit" >Continuer</button>
+            <button type="submit" onClick={sendDetailsToServer}>Continuer</button>
           </form>
         )}
       </div>
