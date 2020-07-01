@@ -13,7 +13,7 @@ const Assoc = lazy(() => import('../Assoc/Assoc'));
 const Favoris = lazy(() => import('../Favoris/Favoris'));
 const Account = lazy(() => import('../Account/Account'));
 const SignUp = lazy(() => import('../SignUp/SignUp'));
-const TestCarbone = lazy(() => import('../TestCarbone/TestCarbone'));
+const TestCarbone = lazy(() => import('../SignUp/TestCarbone'));
 
 function Routing() {
   return (

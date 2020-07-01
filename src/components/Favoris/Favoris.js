@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './favoris.scss';
 import Defi from "../global/Defi";
+import DefiDescription from "../global/DefiDescription";
 
 function Favoris(){
 
@@ -35,14 +36,35 @@ function Favoris(){
     ]
   })
 
+  const [defiClicked, setDefiClicked] = useState(false)
+
+  const [chosenDefi, setChosenDefi] = useState({
+    name: '',
+    points: 0
+  })
+
+  const onClick = (value) => {
+    setDefiClicked(value.defiClicked)
+    setChosenDefi({
+      name: value.name,
+      points: value.points
+    })
+  }
+
   return(
     <div className="favoris">
-      <h1 className="page_title">Mes défis favoris</h1>
-      <div className="favoris_container">
-        {defiFav[0].defis.map((defi, i) => {
-          return <Defi key={i} defi={defi.name} points={defi.points}/>
-        })}
-      </div>
+      {defiClicked === false ? (
+        <div>
+          <h1 className="page_title">Mes défis favoris</h1>
+          <div className="favoris_container">
+            {defiFav[0].defis.map((defi, i) => {
+              return <Defi onClick={onClick} key={i} defi={defi.name} points={defi.points}/>
+            })}
+          </div>
+        </div>
+      ) : (
+        <DefiDescription name={chosenDefi.name} points={chosenDefi.points} />
+      )}
     </div>
   );
 }

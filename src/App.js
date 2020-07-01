@@ -6,7 +6,7 @@ import SignUp from './components/SignUp/SignUp';
 
 import dotsUp from './assets/dots_up.png'
 import dotsDown from './assets/dots_down.png'
-import TestCarbone from './components/TestCarbone/TestCarbone';
+import TestCarbone from './components/SignUp/TestCarbone';
 
 function App() {
   return (

@@ -13,7 +13,7 @@ function QuestionTest(props){
         <li>{props.reponseD}</li>
       </ul>
 
-      <button onClick={props.increment}>Suivant</button>
+      <button onClick={props.increment}>Suivant button</button>
     </div>
   );
 }

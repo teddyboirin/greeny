@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import QuestionTest from '../SignUp/QuestionTest';
+import QuestionTest from './QuestionTest';
 
 function TestCarbone() {
   const testEtape = useState({
@@ -72,47 +72,54 @@ function TestCarbone() {
   })
 
   const [nextStep, setNextStep] = useState({
-    step: 0,
+    step: -1,
     show: false
   })
 
   function increment() {
-    setNextStep(nextStep.step + 1 )
-    
+    setNextStep({
+      step: nextStep.step + 1,
+      show: true
+    })
     if(nextStep.step === 7) {
       window.location.assign('/defis')
     }
   }
 
+  function cc(){
+    setNextStep({
+      show : !nextStep.show,
+      step : nextStep.step + 1
+    })
+  }
+
   return (
     <div className="test_carbone">
+      {console.log(nextStep.show)}
       <img src={require('../../assets/logo-green.svg')} alt="logo"/>
 
       { !nextStep.show ? (
         <div>
-          <h1>Découvre ton empreinte carbon</h1>
+          <h1>Découvre ton empreinte carbone</h1>
           <p>Répondez aux questions suivantes le plus honnêtement possible pour connaître une estimation de votre empreinte carbone</p>
-          <button onClick={() => setNextStep(nextStep.show, console.log("coucou"))}>Suivant</button>
+          <button onClick={cc}>Suivant</button>
         </div>
 
         ) : ( 
-        <div>
-        {testEtape[0].etapes.map((etape, i) => {
-          if(etape.id === nextStep.step && i === etape.id) {
-            return <QuestionTest 
-              key={i} 
-              question={etape.question} 
-              reponseA={etape.reponseA} 
-              reponseB={etape.reponseB} 
-              reponseC={etape.reponseC} 
-              reponseD={etape.reponseD}
-              increment={increment}
-            />
-          }
-        })
-        }
-        </div>
-      )}
+          testEtape[0].etapes.map((etape, i) => {
+            if(etape.id === nextStep.step && i === etape.id) {
+              return <QuestionTest 
+                key={i} 
+                question={etape.question} 
+                reponseA={etape.reponseA} 
+                reponseB={etape.reponseB} 
+                reponseC={etape.reponseC} 
+                reponseD={etape.reponseD}
+                increment={increment}
+              />
+            }
+          })
+        )}
 
     </div>
   )

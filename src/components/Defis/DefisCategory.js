@@ -47,7 +47,6 @@ function DefisCategory(props){
       name: value.name,
       points: value.points
     })
-    console.log(value.name)
   }
 
   return(
