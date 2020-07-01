@@ -11,6 +11,9 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 30px 0;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .defi_top{

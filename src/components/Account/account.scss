@@ -113,6 +113,7 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
     width: 375.23px;
     height: 34rem;
     position: relative;
+    z-index: -1;
   }
 
   .recurrence {
