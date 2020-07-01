@@ -37,15 +37,11 @@ function SignUp() {
             "email": registrate.email,
             "password": registrate.password
         }
-        console.log(userData)
 
         axios.post(`http://127.0.0.1:8000/api/users`, userData)
-            .then(function (response) {
-                if(response.data.code === 200){
-                    redirectToTest()
-                } else{
-                  console.log("not working");
-              }
+            .then((response) => {
+              console.log(response.userData);
+              redirectToTest()
             })
             .catch(function (error) {
                 console.log(error);
@@ -57,7 +53,7 @@ function SignUp() {
 
   const redirectToTest = () => {
     window.location.assign('/test');
-}
+  }  
 
   return (
     <div className='SignUp'>
