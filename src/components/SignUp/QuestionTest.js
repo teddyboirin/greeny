@@ -1,6 +1,10 @@
 import React from "react";
 
 function QuestionTest(props){
+  let buttonDecrement;
+  if (props.id > 1) {
+    buttonDecrement = <button onClick={props.deincrement}>Précédent</button>
+  }
 
   return(
     <div className="test_carbone_detail">
@@ -16,7 +20,7 @@ function QuestionTest(props){
         </ul>
 
         <div className="button_step">
-          <button onClick={props.deincrement}>Précédent</button>
+          {buttonDecrement}
           <button onClick={props.increment}>Suivant</button>
         </div>
       </div>

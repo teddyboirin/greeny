@@ -102,9 +102,18 @@ $letters: "A", "B", "C", "D";
       text-align: center;
       position: relative;
       padding: 0 1rem;
-
+      transition: all .2s ease-in-out;
       &:not(:last-of-type) {
         margin-right: 2.25rem;
+      }
+
+      &:hover {
+        background-color: $neonGreen;
+        color: #fff;
+
+        &:before {
+          color: #fff;
+        }
       }
     }
   }

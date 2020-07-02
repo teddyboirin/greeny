@@ -34,24 +34,26 @@ function SignUp() {
   const sendDetailsToServer = (e) => {
     e.preventDefault()
     if(registrate.nom.length && registrate.prenom.length && registrate.email.length && registrate.password.length ) {
-        const userData ={
-          "email": registrate.email,
-          "password": registrate.password,
-          "roles":registrate.roles,
-          "points": registrate.points,
-          "nom":registrate.nom,
-          "prenom":registrate.prenom
-        }
-        //console.log(userData)
-        axios.post('http://127.0.0.1:8000/api/users', userData)
-        .then(function (response) {
-          console.log(response);
-          redirectToTest()
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
+      const userData ={
+        "email": registrate.email,
+        "password": registrate.password,
+        "roles":registrate.roles,
+        "points": registrate.points,
+        "nom":registrate.nom,
+        "prenom":registrate.prenom
       }
+      //console.log(userData)
+      axios.post('http://127.0.0.1:8000/api/users', userData)
+      .then(function (response) {
+        console.log(response);
+        redirectToTest()
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    } else {
+      alert("Rempli tous les champs")
+    }
   }
 
   const redirectToTest = () => {
@@ -75,6 +77,7 @@ function SignUp() {
         </div>
         {signup === true ? (
           <form>
+            <label htmlFor="nom"></label>
             <input 
               type="text" 
               id="nom" 
@@ -82,6 +85,8 @@ function SignUp() {
               value={registrate.nom} 
               onChange={handleChange}
             />
+
+            <label htmlFor="password"></label>
             <input 
               type="password" 
               id="password" 
@@ -92,7 +97,9 @@ function SignUp() {
             <button type="submit">Continuer</button>
           </form >
         ) : (
+
           <form onSubmit={sendDetailsToServer}>
+            <label htmlFor="nom"></label>
             <input 
               type="text" 
               id="nom" 
@@ -100,6 +107,8 @@ function SignUp() {
               value={registrate.nom} 
               onChange={handleChange}
             />
+
+            <label htmlFor="prenom"></label>
             <input 
               type="text" 
               id="prenom" 
@@ -107,6 +116,8 @@ function SignUp() {
               value={registrate.prenom} 
               onChange={handleChange}
             />
+
+            <label htmlFor="email"></label>
             <input 
               type="email" 
               id="email" 
@@ -114,6 +125,8 @@ function SignUp() {
               value={registrate.email} 
               onChange={handleChange}
             />
+
+            <label htmlFor="password"></label>
             <input 
               type="password" 
               id="password" 
