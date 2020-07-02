@@ -8,70 +8,134 @@ function TestCarbone() {
       {
         id: 0,
         question: "Avec combien de personnes habitez-vous ?",
-        reponseA: "5 ou plus",
-        reponseB: "2, 3 ou 4 personnes",
-        reponseC: "Avec une personne",
-        reponseD: "J’habite seul"
+        answers: [
+          {
+            "reponseA": "5 ou plus",
+            "pointsA": 4,
+            "reponseB": "2, 3 ou 4 personnes",
+            "pointsB": 3,
+            "reponseC": "Avec une personne",
+            "pointsC": 2,
+            "reponseD": "J’habite seul",
+            "pointsD": 1
+          }
+       ]
       },
       {
         id: 1,
         question: "Quelle est votre consommation de viande / poisson ?",
-        reponseA: "2 à 3 fois par jour",
-        reponseB: "1 fois par jour",
-        reponseC: "Quelques fois par semaine",
-        reponseD: "Je suis végétarien"
+        answers: [
+          {
+            "reponseA": "2 à 3 fois par jour",
+            "pointsA": 4,
+            "reponseB": "1 fois par jour",
+            "pointsB": 3,
+            "reponseC": "Quelques fois par semaine",
+            "pointsC": 2,
+            "reponseD": "Je suis végétarien",
+            "pointsD": 1
+          }
+        ]
       },
       {
         id: 2,
         question: "Jetez vous de la nourriture périmée ?",
-        reponseA: "Chaque semaine",
-        reponseB: "Quelques fois par moi",
-        reponseC: "Quelque fois par an",
-        reponseD: "Jamais"
+        answers: [
+          {
+            "reponseA": "Chaque semaine",
+            "pointsA": 4,
+            "reponseB": "Quelques fois par moi",
+            "pointsB": 3,
+            "reponseC": "Quelque fois par an",
+            "pointsC": 2,
+            "reponseD": "Jamais",
+            "pointsD": 1
+          }
+        ]
       },
       {
         id: 3,
         question: "Quelle surface de votre habitat ?",
-        reponseA: "Plus de 100m2",
-        reponseB: "Entre 41 et 100m2",
-        reponseC: "Entre 20 et 40m2",
-        reponseD: "Moins de 20m2"
+        answers: [
+          {
+            "reponseA": "Plus de 100m2",
+            "pointsA": 4,
+            "reponseB": "Entre 41 et 100m2",
+            "pointsB": 3,
+            "reponseC": "Entre 20 et 40m2",
+            "pointsC": 2,
+            "reponseD": "Moins de 20m2",
+            "pointsD": 1
+          }
+        ]
       },
       {
         id: 4,
         question: "Quel est votre type de chauffage ?",
-        reponseA: "Electrique",
-        reponseB: "Pompe à chaleur",
-        reponseC: "Chauffage à gaz",
-        reponseD: "Autres"
+        answers: [
+          {
+            "reponseA": "Electrique",
+            "pointsA": 4,
+            "reponseB": "Pompe à chaleur",
+            "pointsB": 3,
+            "reponseC": "Chauffage à gaz",
+            "pointsC": 2,
+            "reponseD": "Autres",
+            "pointsD": 1
+          }
+        ]
       },
       {
         id: 5,
         question: "Pour vos déplacements du quotidien vous prenez...",
-        reponseA: "Principalement la voiture / moto",
-        reponseB: "Un peut la voiture et autre (bus, à pied, ...)",
-        reponseC: "Plutôt transports en commun",
-        reponseD: "Tout à pied ou en vélo"
+        answers: [
+          {
+            "reponseA": "Principalement la voiture / moto",
+            "pointsA": 4,
+            "reponseB": "Un peut la voiture et autre (bus, à pied, ...)",
+            "pointsB": 3,
+            "reponseC": "Plutôt transports en commun",
+            "pointsC": 2,
+            "reponseD": "Tout à pied ou en vélo",
+            "pointsD": 1
+          }
+        ]
       },
       {
         id: 6,
         question: "Vous prenez l’avion ...",
-        reponseA: "Plus de 6 fois / an",
-        reponseB: "Entre 2 et 6 fois / an",
-        reponseC: "1 ou 2 fois / an",
-        reponseD: "Jamais"
+        answers: [
+          {
+            "reponseA": "Plus de 6 fois / an",
+            "pointsA": 4,
+            "reponseB": "Entre 2 et 6 fois / an",
+            "pointsB": 3,
+            "reponseC": "1 ou 2 fois / an",
+            "pointsC": 2,
+            "reponseD": "Jamais",
+            "pointsD": 1
+          }
+        ]
       },
       {
         id: 7,
         question: "Quel est votre budget loisir/passion (hors nourriture) ?",
-        reponseA: "Plus de 1500 €/mois",
-        reponseB: "Entre 1000 et 1499 €/mois",
-        reponseC: "Entre 100 et 999 €/mois",
-        reponseD: "Moins de 100 €/mois"
+        answers: [
+          {
+            "reponseA": "Plus de 1500 €/mois",
+            "pointsA": 4,
+            "reponseB": "Entre 1000 et 1499 €/mois",
+            "pointsB": 3,
+            "reponseC": "Entre 100 et 999 €/mois",
+            "pointsC": 2,
+            "reponseD": "Moins de 100 €/mois",
+            "pointsD": 1
+          }
+        ]
       }
     ]
   })
-
+  console.log(testEtape[0].etapes[0].answers)
   const [nextStep, setNextStep] = useState({
     step: -1,
     show: false
@@ -87,7 +151,7 @@ function TestCarbone() {
     }
   }
 
-  function deincrement() {
+  function decrement() {
     setNextStep({
       step: nextStep.step - 1,
       show: true
@@ -118,21 +182,31 @@ function TestCarbone() {
 
         ) : ( 
           testEtape[0].etapes.map((etape, i) => {
-            if(etape.id === nextStep.step && i === etape.id) {
-              return <QuestionTest 
-                key={i} 
-                id={etape.id + 1}
-                question={etape.question} 
-                reponseA={etape.reponseA} 
-                reponseB={etape.reponseB} 
-                reponseC={etape.reponseC} 
-                reponseD={etape.reponseD}
-                increment={increment}
-                deincrement={deincrement}
-              />
-            }
+
+            return etape.id === nextStep.step && i === etape.id ? 
+              <div key={i}>
+
+                {etape.answers.map((answer, j) => (
+                    
+                    <QuestionTest 
+                      key={j}
+                      id={etape.id + 1}
+                      question={etape.question} 
+                      reponseA={answer.reponseA} 
+                      reponseB={answer.reponseB} 
+                      reponseC={answer.reponseC} 
+                      reponseD={answer.reponseD}
+                      increment={increment}
+                      decrement={decrement}
+                    />
+                ))}
+               
+            </div>
+          :
+            " "
           })
-        )}
+        )
+      }
 
     </div>
   )

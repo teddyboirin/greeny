@@ -3,7 +3,7 @@ import React from "react";
 function QuestionTest(props){
   let buttonDecrement;
   if (props.id > 1) {
-    buttonDecrement = <button onClick={props.deincrement}>Précédent</button>
+    buttonDecrement = <button onClick={props.decrement}>Précédent</button>
   }
 
   return(
