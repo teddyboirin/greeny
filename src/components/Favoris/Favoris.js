@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './favoris.scss';
-import Defi from "../global/Defi";
-import DefiDescription from "../global/DefiDescription";
+import Defi from "../global/Defi/Defi";
+import DefiDescription from "../global/DefiDescription/DefiDescription";
 
 function Favoris(){
 

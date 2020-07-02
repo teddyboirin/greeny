@@ -1,8 +1,6 @@
 @import '../../styles/mixins/spritesheet.scss';
 @import '../../styles/var/var.scss';
 
-$bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightOrange;
-
 .account {
 
   .title_account {
@@ -52,11 +50,6 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
   .account_inner_right {
     padding-left: 4rem;
 
-    .defis_categ_container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
     h3 {
       color: $grey;
       font-weight: 500;
@@ -80,79 +73,12 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
     }
   }
 
-  @each $bgColor in $bgColors {
-    .defis_categ_bloc:nth-of-type(#{index($bgColors, $bgColor)}) div {
-      background-color: $bgColor;
-    }
-  }
-
-  .defis_categ_bloc {
-    width: 11.75rem;
-    height: 11.75rem;
-    box-shadow: 0px 4px 12px rgba(145, 145, 145, 0.25);
-
-    h2 {
-      font-weight: lighter;
-      font-size: 1rem;
-      font-size: 0.813rem;
-      margin: -1.5rem 0 1.5rem;    
-    }
-
-    > div { 
-      border-radius: 50%;
-
-      &:before {
-        width: 1.875rem;
-        height: 1.875rem;
-      }
-    }
-  }
-
   .bloc_info {
     box-shadow: 0px 4px 12px rgba(144, 144, 144, 0.25);
     border-radius: 10px;
     width: 375.23px;
     height: 34rem;
     position: relative;
-    z-index: -1;
-  }
-
-  .recurrence {
-    height: 500px;
-    overflow: scroll;
-
-    .defi {
-      width: 36rem;
-      height: 4rem;
-      flex-direction: row;
-      align-items: center;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-
-      .defi_text {
-        color: #000;
-        font-weight: bold;
-        width: 56%;
-      }
-    }
-
-    .defi_top {
-      .defi_bfr:before {
-        content: none;
-      }
-
-      div:last-child {
-        height: 3.438rem;
-        width: 3.438rem;
-        font-size: 0.938rem;
-      }  
-    }
-
-    .defi_bottom .defi_bfr:before {
-      transform: rotate(-90deg);
-    }
   }
 
   .avatar {
@@ -161,25 +87,11 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
     margin: 2rem auto;
     position: relative;
 
-    // &:before {
-    //   content: "";
-    //   mask-image: url('../../assets/spritesheet.svg');
-    //   background-color: #fff;
-    //   @include maskIconCoord(2, 6, 6);
-    //   width: 2rem;
-    //   height: 2rem;
-    //   position: absolute;
-    //   top: 50%;
-    //   transform: translateY(-50%);
-    // }
-
     img {
       width: 4rem;
       height: 4rem;
       border-radius: 50%;
       background-color: $grey;
-
-      
     }
 
     input[type="file"] {
@@ -189,12 +101,6 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-    }
-  }
-
-  @media screen and (min-width: 786px) {
-    .recurrence {
-        margin: 0 7.563rem 2.563rem 0;
     }
   }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import QuestionTest from './QuestionTest';
+import QuestionTest from '../QuestionTest/QuestionTest';
 import './testCarbone.scss';
 
 function TestCarbone() {
@@ -105,7 +105,7 @@ function TestCarbone() {
     <div className="test_carbone">
 
       <div className="header_test">
-        <img src={require('../../assets/logo-green.svg')} alt="logo"/>
+        <img src={require('../../../assets/logo-green.svg')} alt="logo"/>
         <button onClick={() => window.location.assign('/')}>Connexion</button>
       </div>
 

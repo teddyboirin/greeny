@@ -1,4 +1,4 @@
-@import '../../styles/mixins/spritesheet.scss';
+@import '../../../styles/mixins/spritesheet.scss';
 
 $icons: 5, 9, 7, 10, 6, 11;
 
@@ -32,7 +32,7 @@ $icons: 5, 9, 7, 10, 6, 11;
     &:before {
       content: "";
       display: block;
-      background: url('../../assets/spritesheet.svg');
+      background: url('../../../assets/spritesheet.svg');
     }
   }
 }

@@ -63,8 +63,8 @@ function SignUp() {
   return (
     <div className='SignUp'>
       <div className='SignUp_part SignUp_part_1'>
-        <img className='SignUp_logo_mobile' src={require('../../assets/logo-green.svg')} alt="logo"/>
-        <img className='SignUp_logo_desktop' src={require('../../assets/logo.svg')} alt="logo"/>
+        <img className='SignUp_logo_mobile' src={require('../../../assets/logo-green.svg')} alt="logo"/>
+        <img className='SignUp_logo_desktop' src={require('../../../assets/logo.svg')} alt="logo"/>
       </div>
       <div className='SignUp_part SignUp_part_2'>
         <div className='SignUp_top'>

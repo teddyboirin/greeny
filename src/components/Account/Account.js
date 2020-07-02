@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './account.scss';
-import Reccurent from "./Reccurent";
-import Categories from "./Categories";
+import Reccurent from "./Recurrent/Recurrent";
+import Categories from "./Categories/Categories";
 
 function Account(props){
   const [toggle, setToggle] = useState({

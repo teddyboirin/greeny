@@ -1,0 +1,35 @@
+@import '../../../styles/var/var.scss';
+$bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightOrange;
+
+.defis_categ_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.defis_categ_bloc {
+  width: 11.75rem;
+  height: 11.75rem;
+  box-shadow: 0px 4px 12px rgba(145, 145, 145, 0.25);
+
+  h2 {
+    font-weight: lighter;
+    font-size: 1rem;
+    font-size: 0.813rem;
+    margin: -1.5rem 0 1.5rem;    
+  }
+
+  > div { 
+    border-radius: 50%;
+
+    &:before {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+}
+
+@each $bgColor in $bgColors {
+  .defis_categ_bloc:nth-of-type(#{index($bgColors, $bgColor)}) div {
+    background-color: $bgColor;
+  }
+}

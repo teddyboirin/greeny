@@ -1,5 +1,5 @@
-@import '../../styles/mixins/spritesheet.scss';
-@import '../../styles/var/var.scss';
+@import '../../../styles/mixins/spritesheet.scss';
+@import '../../../styles/var/var.scss';
 
 .defi{
   width: 200px;
@@ -76,7 +76,7 @@
 .defi_top, .defi_bottom {
   .defi_bfr:before {
     content: "";
-    mask-image: url('../../assets/spritesheet.svg');
+    mask-image: url('../../../assets/spritesheet.svg');
     display: block;
   }
 }

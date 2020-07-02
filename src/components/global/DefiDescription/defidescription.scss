@@ -1,5 +1,5 @@
-@import '../../styles/mixins/spritesheet.scss';
-@import '../../styles/var/var.scss';
+@import '../../../styles/mixins/spritesheet.scss';
+@import '../../../styles/var/var.scss';
 
 .DefiDescription, .DefiChecked{
   display: flex;
@@ -94,7 +94,7 @@
     height: 40px;
     width: 40px;
     content: '';
-    background-image: url('../../assets/spritesheet.svg');
+    background-image: url('../../../assets/spritesheet.svg');
     position: absolute;
     right: 7px;
   }

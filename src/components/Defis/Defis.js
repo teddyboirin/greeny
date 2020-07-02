@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './defis.scss';
-import Category from "../global/Category";
-import DefisCategory from "./DefisCategory";
+import Category from "../global/Category/Category";
+import DefisCategory from "./DefisCategory/DefisCategory";
 
 function Defis(){
 

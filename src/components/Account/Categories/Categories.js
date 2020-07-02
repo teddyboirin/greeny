@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import './account.scss';
-import Category from "../global/Category";
+import './categories.scss';
+import Category from "../../global/Category/Category";
 
 function Categories(){
 

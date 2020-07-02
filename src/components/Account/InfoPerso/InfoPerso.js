@@ -1,4 +1,5 @@
 import React from "react";
+import './infoperso.scss';
 
 function InfoPerso(props){
   return(

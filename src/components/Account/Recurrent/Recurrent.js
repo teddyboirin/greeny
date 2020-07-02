@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import './defis.scss';
-import Defi from "../global/Defi";
-import DefiDescription from "../global/DefiDescription";
+import React , {useState} from "react";
+import './recurrent.scss';
+import Defi from "../../global/Defi/Defi";
+import DefiDescription from "../../global/DefiDescription/DefiDescription";
 
-function DefisCategory(props){
+function Reccurent(){
 
-  const defis = useState({
+  const defiReccurent = useState({
     defis: [
       {
         points: 5,
@@ -52,13 +52,10 @@ function DefisCategory(props){
   return(
     <div>
       {defiClicked === false ? (
-        <div>
-          <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ} , name : {chosenDefi.name}</h1>
-          <div className="defis_container">
-            {defis[0].defis.map((defi, i) => {
-              return <Defi onClick={onClick} key={i} defi={defi.name} points={defi.points}/>
-            })}
-          </div>
+        <div className="recurrence">
+        {defiReccurent[0].defis.map((defi, i) => {
+          return <Defi onClick={onClick} key={i} points={defi.points} defi={defi.name}/>
+        })}
         </div>
       ) : (
         <DefiDescription name={chosenDefi.name} points={chosenDefi.points} />
@@ -67,4 +64,4 @@ function DefisCategory(props){
   )
 }
 
-export default DefisCategory
+export default Reccurent;

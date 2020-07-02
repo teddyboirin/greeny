@@ -34,7 +34,7 @@ function DefiDescription(props){
         </div>
       ) : (
         <div className='DefiChecked'>
-          <img src={require('../../assets/bravo.svg')} alt="bravo"/>
+          <img src={require('../../../assets/bravo.svg')} alt="bravo"/>
           <h1>BRAVO</h1>
           <h2>Tu as relevé le défi !</h2>
           <div className='DefiChecked_points'>

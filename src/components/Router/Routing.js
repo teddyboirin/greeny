@@ -12,8 +12,8 @@ const Defis = lazy(() => import('../Defis/Defis'));
 const Assoc = lazy(() => import('../Assoc/Assoc'));
 const Favoris = lazy(() => import('../Favoris/Favoris'));
 const Account = lazy(() => import('../Account/Account'));
-const SignUp = lazy(() => import('../SignUp/SignUp'));
-const TestCarbone = lazy(() => import('../SignUp/TestCarbone'));
+const SignUp = lazy(() => import('../FormUser/SignUp/SignUp'));
+const TestCarbone = lazy(() => import('../FormUser/TestCarbone/TestCarbone'));
 
 function Routing() {
   return (
