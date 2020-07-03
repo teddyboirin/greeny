@@ -8,7 +8,7 @@ import dotsUp from './assets/dots_up.png'
 import dotsDown from './assets/dots_down.png'
 import TestCarbone from './components/FormUser/TestCarbone/TestCarbone';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       {window.location.pathname === '/' ?  

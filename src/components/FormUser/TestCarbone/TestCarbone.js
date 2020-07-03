@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import QuestionTest from '../QuestionTest/QuestionTest';
 import './testCarbone.scss';
+import ResultatTest from '../ResultatTest/ResultatTest';
 
 function TestCarbone() {
   const testEtape = useState({
@@ -180,6 +181,10 @@ function TestCarbone() {
             "points": 1
           }
         ]
+      },
+      {
+        id: 8,
+        answers: []
       }
     ]
   })
@@ -194,9 +199,6 @@ function TestCarbone() {
       step: nextStep.step + 1,
       show: true
     })
-    if(nextStep.step === 7) {
-      window.location.assign('/defis')
-    }
   }
 
   const decrement = () => {
@@ -223,8 +225,8 @@ function TestCarbone() {
   }
 
   const totalPoints = arrayPoints.reduce(
-    (previousScore, currentScore, index) =>
-      previousScore+currentScore, 
+    (previousPoints, currentPoints, index) =>
+      previousPoints+currentPoints, 
       0
   );
   //console.log(totalPoints);
@@ -264,6 +266,13 @@ function TestCarbone() {
           })
         )
       }
+
+      { nextStep.step === 8 ? (
+          <ResultatTest totalPoints={totalPoints} /> 
+
+        ) : ( 
+          " "
+      )}
 
     </div>
   )
