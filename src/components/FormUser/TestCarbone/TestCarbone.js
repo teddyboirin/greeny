@@ -10,14 +10,20 @@ function TestCarbone() {
         question: "Avec combien de personnes habitez-vous ?",
         answers: [
           {
-            "reponseA": "5 ou plus",
-            "pointsA": 4,
-            "reponseB": "2, 3 ou 4 personnes",
-            "pointsB": 3,
-            "reponseC": "Avec une personne",
-            "pointsC": 2,
-            "reponseD": "J’habite seul",
-            "pointsD": 1
+            "reponse": "5 ou plus",
+            "points": 4,
+          },
+          {
+            "reponse": "2, 3 ou 4 personnes",
+            "points": 3,
+          },
+          {
+            "reponse": "Avec une personne",
+            "points": 2,
+          },
+          {
+            "reponse": "J’habite seul",
+            "points": 1
           }
        ]
       },
@@ -26,14 +32,20 @@ function TestCarbone() {
         question: "Quelle est votre consommation de viande / poisson ?",
         answers: [
           {
-            "reponseA": "2 à 3 fois par jour",
-            "pointsA": 4,
-            "reponseB": "1 fois par jour",
-            "pointsB": 3,
-            "reponseC": "Quelques fois par semaine",
-            "pointsC": 2,
-            "reponseD": "Je suis végétarien",
-            "pointsD": 1
+            "reponse": "2 à 3 fois par jour",
+            "points": 4,
+          },
+          {
+            "reponse": "1 fois par jour",
+            "points": 3,
+          },
+          {
+            "reponse": "Quelques fois par semaine",
+            "points": 2,
+          },
+          {
+            "reponse": "Je suis végétarien",
+            "points": 1
           }
         ]
       },
@@ -42,14 +54,20 @@ function TestCarbone() {
         question: "Jetez vous de la nourriture périmée ?",
         answers: [
           {
-            "reponseA": "Chaque semaine",
-            "pointsA": 4,
-            "reponseB": "Quelques fois par moi",
-            "pointsB": 3,
-            "reponseC": "Quelque fois par an",
-            "pointsC": 2,
-            "reponseD": "Jamais",
-            "pointsD": 1
+            "reponse": "Chaque semaine",
+            "points": 4,
+          },
+          {
+            "reponse": "Quelques fois par moi",
+            "points": 3,
+          },
+          {
+            "reponse": "Quelque fois par an",
+            "points": 2,
+          },
+          {
+            "reponse": "Jamais",
+            "points": 1
           }
         ]
       },
@@ -58,15 +76,21 @@ function TestCarbone() {
         question: "Quelle surface de votre habitat ?",
         answers: [
           {
-            "reponseA": "Plus de 100m2",
-            "pointsA": 4,
-            "reponseB": "Entre 41 et 100m2",
-            "pointsB": 3,
-            "reponseC": "Entre 20 et 40m2",
-            "pointsC": 2,
-            "reponseD": "Moins de 20m2",
-            "pointsD": 1
-          }
+            "reponse": "Plus de 100m2",
+            "points": 4,
+          },
+          {
+            "reponse": "Entre 41 et 100m2",
+            "points": 3,
+          },
+          {
+            "reponse": "Entre 20 et 40m2",
+            "points": 2,
+          },
+          {
+            "reponse": "Moins de 20m2",
+            "points": 1
+          },
         ]
       },
       {
@@ -74,14 +98,20 @@ function TestCarbone() {
         question: "Quel est votre type de chauffage ?",
         answers: [
           {
-            "reponseA": "Electrique",
-            "pointsA": 4,
-            "reponseB": "Pompe à chaleur",
-            "pointsB": 3,
-            "reponseC": "Chauffage à gaz",
-            "pointsC": 2,
-            "reponseD": "Autres",
-            "pointsD": 1
+            "reponse": "Electrique",
+            "points": 4,
+          },
+          {
+            "reponse": "Pompe à chaleur",
+            "points": 3,
+          },
+          {
+            "reponse": "Chauffage à gaz",
+            "points": 2,
+          },
+          {
+            "reponse": "Autres",
+            "points": 1
           }
         ]
       },
@@ -90,14 +120,20 @@ function TestCarbone() {
         question: "Pour vos déplacements du quotidien vous prenez...",
         answers: [
           {
-            "reponseA": "Principalement la voiture / moto",
-            "pointsA": 4,
-            "reponseB": "Un peut la voiture et autre (bus, à pied, ...)",
-            "pointsB": 3,
-            "reponseC": "Plutôt transports en commun",
-            "pointsC": 2,
-            "reponseD": "Tout à pied ou en vélo",
-            "pointsD": 1
+            "reponse": "Principalement la voiture / moto",
+            "points": 4,
+          },
+          {
+            "reponse": "Un peut la voiture et autre (bus, à pied, ...)",
+            "points": 3,
+          },
+          {
+            "reponse": "Plutôt transports en commun",
+            "points": 2,
+          },
+          {
+            "reponse": "Tout à pied ou en vélo",
+            "points": 1
           }
         ]
       },
@@ -106,15 +142,21 @@ function TestCarbone() {
         question: "Vous prenez l’avion ...",
         answers: [
           {
-            "reponseA": "Plus de 6 fois / an",
-            "pointsA": 4,
-            "reponseB": "Entre 2 et 6 fois / an",
-            "pointsB": 3,
-            "reponseC": "1 ou 2 fois / an",
-            "pointsC": 2,
-            "reponseD": "Jamais",
-            "pointsD": 1
-          }
+            "reponse": "Plus de 6 fois / an",
+            "points": 4,
+          },
+          {
+            "reponse": "Entre 2 et 6 fois / an",
+            "points": 3,
+          },
+          {
+            "reponse": "1 ou 2 fois / an",
+            "points": 2,
+          },
+          {
+            "reponse": "Jamais",
+            "points": 1
+          },
         ]
       },
       {
@@ -122,26 +164,32 @@ function TestCarbone() {
         question: "Quel est votre budget loisir/passion (hors nourriture) ?",
         answers: [
           {
-            "reponseA": "Plus de 1500 €/mois",
-            "pointsA": 4,
-            "reponseB": "Entre 1000 et 1499 €/mois",
-            "pointsB": 3,
-            "reponseC": "Entre 100 et 999 €/mois",
-            "pointsC": 2,
-            "reponseD": "Moins de 100 €/mois",
-            "pointsD": 1
+            "reponse": "Plus de 1500 €/mois",
+            "points": 4,
+          },
+          {
+            "reponse": "Entre 1000 et 1499 €/mois",
+            "points": 3,
+          },
+          {
+            "reponse": "Entre 100 et 999 €/mois",
+            "points": 2,
+          },
+          {
+            "reponse": "Moins de 100 €/mois",
+            "points": 1
           }
         ]
       }
     ]
   })
-  console.log(testEtape[0].etapes[0].answers)
+  
   const [nextStep, setNextStep] = useState({
     step: -1,
     show: false
   })
 
-  function increment() {
+  const increment = () => {
     setNextStep({
       step: nextStep.step + 1,
       show: true
@@ -151,19 +199,35 @@ function TestCarbone() {
     }
   }
 
-  function decrement() {
+  const decrement = () => {
     setNextStep({
       step: nextStep.step - 1,
       show: true
     })
   }
 
-  function showStep(){
+  const showStep = () => {
     setNextStep({
       show : !nextStep.show,
       step : nextStep.step + 1
     })
   }
+
+  const [arrayPoints, setArrayPoints] = useState([])
+
+  const addPoints = (value) => {
+    let newPoints = [...arrayPoints]
+    newPoints.push(value.points)
+    setArrayPoints(newPoints)
+    //console.log(newPoints)
+  }
+
+  const totalPoints = arrayPoints.reduce(
+    (previousScore, currentScore, index) =>
+      previousScore+currentScore, 
+      0
+  );
+  //console.log(totalPoints);
 
   return (
     <div className="test_carbone">
@@ -184,26 +248,19 @@ function TestCarbone() {
           testEtape[0].etapes.map((etape, i) => {
 
             return etape.id === nextStep.step && i === etape.id ? 
-              <div key={i}>
-
-                {etape.answers.map((answer, j) => (
                     
-                    <QuestionTest 
-                      key={j}
-                      id={etape.id + 1}
-                      question={etape.question} 
-                      reponseA={answer.reponseA} 
-                      reponseB={answer.reponseB} 
-                      reponseC={answer.reponseC} 
-                      reponseD={answer.reponseD}
-                      increment={increment}
-                      decrement={decrement}
-                    />
-                ))}
-               
-            </div>
-          :
-            " "
+              <QuestionTest 
+                key={i}
+                id={etape.id + 1}
+                question={etape.question} 
+                answers={etape.answers}
+                reponse={etape.reponse}
+                increment={increment}
+                decrement={decrement}
+                addPoints={addPoints}
+              />
+            :
+              " "
           })
         )
       }

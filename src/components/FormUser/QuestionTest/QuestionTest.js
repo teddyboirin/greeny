@@ -1,4 +1,5 @@
 import React from "react";
+import ReponseTest from '../ReponseTest/ReponseTest';
 
 function QuestionTest(props){
   let buttonDecrement;
@@ -9,14 +10,18 @@ function QuestionTest(props){
   return(
     <div className="test_carbone_detail">
       <span>Question {props.id} / 8</span>
-      <h2>{props.question}</h2>
+      <h2 onClick={props.addPoints}>{props.question}</h2>
 
       <div>
         <ul>
-          <li>{props.reponseA}</li>
-          <li>{props.reponseB}</li>
-          <li>{props.reponseC}</li>
-          <li>{props.reponseD}</li>
+          {props.answers.map((answer, j) => (
+            <ReponseTest 
+              key={j} 
+              reponse={answer.reponse} 
+              points={answer.points}
+              addPoints={props.addPoints}
+            />
+          ))}
         </ul>
 
         <div className="button_step">
