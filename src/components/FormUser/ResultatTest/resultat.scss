@@ -31,6 +31,66 @@
 
   p {
     margin-top: 1.875rem;
+    margin-bottom: 6.25rem;
     font-size: 1.25rem;
+  }
+
+  button {
+    margin-top: 9.375rem;
+  }
+
+  .chart_result_bloc {
+    display: flex;
+    background: linear-gradient(90deg, #C20000 7.9%, #FF5C00 28.05%, #FFA800 47.24%, #FFE600 71.22%, #80FF00 95.68%);
+    border-radius: 19px;
+    height: 1.5rem;
+    margin-top: 6rem;
+
+    p {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      width: max-content;
+      margin-top: -8rem;
+      margin-left: -1rem;
+      font-size: 20px;
+    }
+
+    .chart_axe span {
+      opacity: 0;
+    }
+
+    .chart_result {
+      position: relative;
+      
+      >div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0;
+
+        &:before {
+          content: "";
+          background: url('../../../assets/arrow.svg') no-repeat;
+          width: 2rem;
+          height: 2.5rem;
+          display: block;
+          margin-top: -5rem;
+          margin-left: -1rem;
+        }
+
+        &:after {
+          content: "";
+          background-color: red;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          position: absolute;
+          top: -1.8rem;
+          z-index: 1;
+        }
+      }
+    }
   }
 }

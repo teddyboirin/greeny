@@ -12,7 +12,7 @@ function QuestionTest(props){
     {
       props.id < 9 ? (
         <div className="test_carbone_detail">
-          <div>
+          <div className="test_question_bloc">
             <span>Question {props.id} / 8</span>
             <h2 onClick={props.addPoints}>{props.question}</h2>
           </div>

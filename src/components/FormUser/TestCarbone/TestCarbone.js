@@ -186,7 +186,8 @@ function TestCarbone() {
         id: 8,
         answers: []
       }
-    ]
+    ],
+    detail: 2
   })
   
   const [nextStep, setNextStep] = useState({
@@ -217,11 +218,17 @@ function TestCarbone() {
 
   const [arrayPoints, setArrayPoints] = useState([])
 
-  const addPoints = (value) => {
+  const addPoints = (value, event) => {
     let newPoints = [...arrayPoints]
     newPoints.push(value.points)
     setArrayPoints(newPoints)
-    //console.log(newPoints)
+
+    // if (event === value.detail) {
+    //   newPoints.splice(value.points, 1);
+    // }
+    // //console.log(newPoints)
+    
+    // console.log(newPoints, value.detail)
   }
 
   const totalPoints = arrayPoints.reduce(
