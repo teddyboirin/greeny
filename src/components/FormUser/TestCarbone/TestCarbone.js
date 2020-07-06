@@ -186,8 +186,7 @@ function TestCarbone() {
         id: 8,
         answers: []
       }
-    ],
-    detail: 2
+    ]
   })
   
   const [nextStep, setNextStep] = useState({

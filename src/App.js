@@ -11,6 +11,8 @@ import TestCarbone from './components/FormUser/TestCarbone/TestCarbone';
 function App(props) {
   return (
     <div className="App">
+      <img src={require('./assets/logo-green.svg')} alt="logo" className="logo-app"/>
+      
       {window.location.pathname === '/' ?  
         <SignUp /> 
       

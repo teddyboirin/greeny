@@ -32,12 +32,19 @@ function Categories(){
       }
     ]
   })
-
+  
+  const totalPoints = categories[0].categories.reduce((total, category) => total + category.points, 0);
+  
   return(
     <div className="defis_categ_container">
       {categories[0].categories.map((category, i) => {
         return <Category key={i} categ={category.name} points={category.points + 'pts'}/>
       })}
+
+      <div>
+        <h3>Total des points accumulés</h3>
+        <p>{totalPoints}pts</p>
+      </div>
     </div>
   )
 }
