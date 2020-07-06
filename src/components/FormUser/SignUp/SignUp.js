@@ -15,11 +15,21 @@ function SignUp() {
     roles: ["1"],
   })
 
+  const [login, setLogin] = useState({
+    email: "",
+    password: ""
+  })
+
   const handleChange = (e) => {
     const {id , value} = e.target   
     setRegistrate(prevState => ({
         ...prevState,
         [id] : value
+    }))
+
+    setLogin(prevState => ({
+      ...prevState,
+      [id] : value
     }))
   }
 
@@ -39,7 +49,7 @@ function SignUp() {
         "password": registrate.password,
         "roles":registrate.roles,
         "points": registrate.points,
-        "nom":registrate.nom,
+        "nom": registrate.nom,
         "prenom":registrate.prenom
       }
       //console.log(userData)
@@ -56,8 +66,30 @@ function SignUp() {
     }
   }
 
+  const sendLoginToServer = (e) => {
+    e.preventDefault()
+
+    const loginData ={
+      "password": login.password,
+      "username": login.email
+    }
+    
+    axios.post('http://127.0.0.1:8000/api/login_check', loginData)
+    .then(function (response) {
+      console.log(response);
+      redirectToDefis()
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
+
   const redirectToTest = () => {
     window.location.assign('/test');
+  }  
+
+  const redirectToDefis = () => {
+    window.location.assign('/defis');
   }  
 
   return (
@@ -76,13 +108,13 @@ function SignUp() {
           </div>
         </div>
         {signup === true ? (
-          <form>
-            <label htmlFor="nom"></label>
+          <form onSubmit={sendLoginToServer}>
+            <label htmlFor="Email"></label>
             <input 
-              type="text" 
-              id="nom" 
-              placeholder="Nom" 
-              value={registrate.nom} 
+              type="email" 
+              id="email" 
+              placeholder="Email" 
+              value={login.email} 
               onChange={handleChange}
             />
 
@@ -91,10 +123,10 @@ function SignUp() {
               type="password" 
               id="password" 
               placeholder="Mot de passe" 
-              value={registrate.password} 
+              value={login.password} 
               onChange={handleChange}
             />
-            <button type="submit">Continuer</button>
+            <button type="submit" onClick={sendLoginToServer}>Continuer</button>
           </form >
         ) : (
 

@@ -4,20 +4,6 @@ import './resultat.scss';
 function ResultatTest(props) {
 
   const data = useState({
-    limits: [
-      {
-        "min": 0,
-        "max": 11
-      },
-      {
-        "min": 12,
-        "max": 21
-      }, 
-      {
-        "min": 22,
-        "max": 32
-      }
-    ],
     axesX: [32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
   })
 
