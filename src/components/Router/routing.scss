@@ -1,88 +1,129 @@
 @import '../../styles/mixins/spritesheet.scss';
+@import '../../styles/var/var.scss';
 
-$icons: 4, 3, 1, 2;
-$margins: 1rem, 3rem, 2.5rem, 2.3rem;
+// $icons: 4, 3, 1, 2;
+// $margins: 1rem, 3rem, 2.5rem, 2.3rem;
+
+// nav {
+//   width: fit-content;
+//   box-shadow: 0px 4px 12px rgba(112, 112, 112, 0.25);
+//   border-radius: 13px;
+//   position: fixed;
+//   right: 2%;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background: #FFF;
+
+//   ul {
+//     padding: 1rem;
+//     height: 30rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//   }
+
+//   @each $icon in $icons {
+//     li:nth-of-type(#{index($icons, $icon)}):before  {
+//       @include maskIconCoord($icon, 6, 6)
+//     }
+//   }
+
+//   li {
+//     list-style: none;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 2rem;
+//     margin: 1rem 0;
+
+//     a {
+//       opacity: 0;
+//       max-height: 0;
+//       overflow: hidden;
+//       transition: all .3s ease-in-out;
+//       transform: rotate(90deg);
+//     }
+
+//     @each $icon in $icons {
+//       li:nth-of-type(#{index($icons, $icon)}):before  {
+//         @include maskIconCoord($icon, 6, 6)
+//       }
+//     }
+
+//     &:first-of-type, &:nth-of-type(2){
+//       &:before {
+//         width: 2.3rem;
+//         height: 2.3rem;  
+//       }
+//     }
+    
+//     &:before {
+//       content: "";
+//       background-color: black;
+//       width: 2rem;
+//       height: 1.8rem;
+//       mask: no-repeat center;
+//       mask-image: url('../../assets/spritesheet.svg');
+//     }
+    
+//   }
+
+//   @each $margin in $margins {
+//     li:hover:nth-of-type(#{index($margins, $margin)}) a {
+//       margin: $margin 0;
+//     }
+//   }
+
+//   li:hover {
+//     &:before {
+//       background-color: #02C39A;
+//     }
+
+//     a {
+//       color: #02C39A;
+//       opacity: 1;
+//       max-height: 500px;
+//     }
+//   }
+// }
 
 nav {
-  width: fit-content;
-  box-shadow: 0px 4px 12px rgba(112, 112, 112, 0.25);
-  border-radius: 13px;
-  position: fixed;
   right: 2%;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #FFF;
-  z-index: 99999;
-
   ul {
-    padding: 1rem;
-    height: 30rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
 
-  @each $icon in $icons {
-    li:nth-of-type(#{index($icons, $icon)}):before  {
-      @include maskIconCoord($icon, 6, 6)
+    li:not(:last-of-type) {
+      margin-right: 2rem;
     }
   }
 
   li {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 2rem;
-    margin: 1rem 0;
+    background-color: #fff;
+    padding: .5rem;
+    border-radius: 24px;
+    transition: all .3s ease-in-out;
 
     a {
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: all .3s ease-in-out;
-      transform: rotate(90deg);
+      color: $neonGreen;
+      font-weight: 600;
     }
 
-    @each $icon in $icons {
-      li:nth-of-type(#{index($icons, $icon)}):before  {
-        @include maskIconCoord($icon, 6, 6)
+    &:hover {
+      background-color: $neonGreen;
+
+      a {
+        color: #fff;
       }
     }
-
-    &:first-of-type, &:nth-of-type(2){
-      &:before {
-        width: 2.3rem;
-        height: 2.3rem;  
-      }
-    }
-    
-    &:before {
-      content: "";
-      background-color: black;
-      width: 2rem;
-      height: 1.8rem;
-      mask: no-repeat center;
-      mask-image: url('../../assets/spritesheet.svg');
-    }
-    
   }
+}
 
-  @each $margin in $margins {
-    li:hover:nth-of-type(#{index($margins, $margin)}) a {
-      margin: $margin 0;
-    }
-  }
+nav, .logo-app {
+  position: absolute;
+  top: 2%;
+}
 
-  li:hover {
-    &:before {
-      background-color: #02C39A;
-    }
-
-    a {
-      color: #02C39A;
-      opacity: 1;
-      max-height: 500px;
-    }
-  }
+.logo-app {
+  margin-left: 2rem;
+  width: 6.5rem;
 }

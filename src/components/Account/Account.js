@@ -45,8 +45,6 @@ function Account(props){
           { !toggle.show ? (
             <div>
               <Categories />
-              <h3>Total des points accumulés</h3>
-              <p></p>
             </div>
           ) : (
             <Reccurent />

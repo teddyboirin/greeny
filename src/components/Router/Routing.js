@@ -28,7 +28,7 @@ function Routing() {
               <Link to="/assoc">Associations</Link>
             </li>
             <li>
-              <Link to="/favoris">Favoris</Link>
+              <Link to="/attente">En attente</Link>
             </li>
             <li>
               <Link to="/account">Compte</Link>
@@ -46,7 +46,7 @@ function Routing() {
             <Route path="/assoc">
               <Assoc />
             </Route>
-            <Route path="/favoris">
+            <Route path="/attente">
               <Favoris />
             </Route>
             <Route path="/account">
