@@ -26,7 +26,12 @@ function ReponseTest(props){
   }
 
   return(
-    <li onClick={onClick} style={{background: style.grey, color: style.black}}>{props.reponse}</li>
+    
+    <li onClick={onClick} style={{background: style.grey, color: style.black}}>
+      <span style={{color: style.green}}>{props.idRep}</span>
+      {props.reponse}
+    </li>
+    
   );
 }
 

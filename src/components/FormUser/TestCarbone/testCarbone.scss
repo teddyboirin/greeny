@@ -1,8 +1,6 @@
 
 @import '../../../styles/var/var.scss';
 
-$letters: "A", "B", "C", "D";
-
 .test_carbone {
 
   img {
@@ -62,7 +60,9 @@ $letters: "A", "B", "C", "D";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2rem 2rem 0;
+    margin: 1rem 0 0;
+    position: absolute;
+    right: 2%;
   }
 }
 
@@ -121,16 +121,11 @@ $letters: "A", "B", "C", "D";
           color: #fff;
         }
       }
-    }
-  }
 
-  @each $letter in $letters {
-    li:nth-of-type(#{index($letters, $letter) }) {
-      &:before {
-        content: $letter;
+      span {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 5%;
+        left: 5%;
         color: $neonGreen;
         font-size: 1.25rem;
       }
@@ -140,5 +135,14 @@ $letters: "A", "B", "C", "D";
   .button_step {
     display: flex;
     justify-content: space-between;
+
+    button:only-of-type {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .test_ul_bloc {
+    position: relative;
   }
 }

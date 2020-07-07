@@ -2,6 +2,7 @@ import React from "react";
 import ReponseTest from '../ReponseTest/ReponseTest';
 
 function QuestionTest(props){
+  
   let buttonDecrement;
   if (props.id > 1) {
     buttonDecrement = <button onClick={props.decrement}>Précédent</button>
@@ -17,13 +18,14 @@ function QuestionTest(props){
             <h2 onClick={props.addPoints}>{props.question}</h2>
           </div>
         
-          <div>
+          <div className="test_ul_bloc">
             <ul>
               {props.answers.map((answer, j) => (
                 <ReponseTest 
                   key={j} 
                   reponse={answer.reponse} 
                   points={answer.points}
+                  idRep={answer.idRep}
                   addPoints={props.addPoints}
                 />
               ))}

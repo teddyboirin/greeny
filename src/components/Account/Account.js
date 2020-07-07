@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './account.scss';
 import Reccurent from "./Recurrent/Recurrent";
 import Categories from "./Categories/Categories";
+const axios = require('axios');
 
 function Account(props){
   const [toggle, setToggle] = useState({
@@ -27,6 +28,20 @@ function Account(props){
       colorWhite : toggle.colorGreen
     })
   }
+
+  const [user, setUsers] = useState({})
+  
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/users')
+    .then(user => {
+      setUsers({
+        user: user
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }, [])
 
   return(
     <div className="account">

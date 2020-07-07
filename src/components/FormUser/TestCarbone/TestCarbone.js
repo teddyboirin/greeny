@@ -11,18 +11,22 @@ function TestCarbone() {
         question: "Avec combien de personnes habitez-vous ?",
         answers: [
           {
+            "idRep": "A",
             "reponse": "5 ou plus",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "2, 3 ou 4 personnes",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Avec une personne",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "J’habite seul",
             "points": 1
           }
@@ -33,18 +37,22 @@ function TestCarbone() {
         question: "Quelle est votre consommation de viande / poisson ?",
         answers: [
           {
+            "idRep": "A",
             "reponse": "2 à 3 fois par jour",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "1 fois par jour",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Quelques fois par semaine",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Je suis végétarien",
             "points": 1
           }
@@ -55,18 +63,22 @@ function TestCarbone() {
         question: "Jetez vous de la nourriture périmée ?",
         answers: [
           {
+            "idRep": "A",
             "reponse": "Chaque semaine",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "Quelques fois par moi",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Quelque fois par an",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Jamais",
             "points": 1
           }
@@ -77,18 +89,22 @@ function TestCarbone() {
         question: "Quelle surface de votre habitat ?",
         answers: [
           {
+            "idRep": "A",
             "reponse": "Plus de 100m2",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "Entre 41 et 100m2",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Entre 20 et 40m2",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Moins de 20m2",
             "points": 1
           },
@@ -99,18 +115,22 @@ function TestCarbone() {
         question: "Quel est votre type de chauffage ?",
         answers: [
           {
+            "idRep": "A",
             "reponse": "Electrique",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "Pompe à chaleur",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Chauffage à gaz",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Autres",
             "points": 1
           }
@@ -121,18 +141,22 @@ function TestCarbone() {
         question: "Pour vos déplacements du quotidien vous prenez...",
         answers: [
           {
+            "idRep": "A",
             "reponse": "Principalement la voiture / moto",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "Un peut la voiture et autre (bus, à pied, ...)",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Plutôt transports en commun",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Tout à pied ou en vélo",
             "points": 1
           }
@@ -143,18 +167,22 @@ function TestCarbone() {
         question: "Vous prenez l’avion ...",
         answers: [
           {
+            "idRep": "A",
             "reponse": "Plus de 6 fois / an",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "Entre 2 et 6 fois / an",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "1 ou 2 fois / an",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Jamais",
             "points": 1
           },
@@ -165,18 +193,22 @@ function TestCarbone() {
         question: "Quel est votre budget loisir/passion (hors nourriture) ?",
         answers: [
           {
+            "idRep": "A",
             "reponse": "Plus de 1500 €/mois",
             "points": 4,
           },
           {
+            "idRep": "B",
             "reponse": "Entre 1000 et 1499 €/mois",
             "points": 3,
           },
           {
+            "idRep": "C",
             "reponse": "Entre 100 et 999 €/mois",
             "points": 2,
           },
           {
+            "idRep": "D",
             "reponse": "Moins de 100 €/mois",
             "points": 1
           }
@@ -221,13 +253,6 @@ function TestCarbone() {
     let newPoints = [...arrayPoints]
     newPoints.push(value.points)
     setArrayPoints(newPoints)
-
-    // if (event === value.detail) {
-    //   newPoints.splice(value.points, 1);
-    // }
-    // //console.log(newPoints)
-    
-    // console.log(newPoints, value.detail)
   }
 
   const totalPoints = arrayPoints.reduce(
@@ -235,13 +260,11 @@ function TestCarbone() {
       previousPoints+currentPoints, 
       0
   );
-  //console.log(totalPoints);
 
   return (
     <div className="test_carbone">
 
       <div className="header_test">
-        <img src={require('../../../assets/logo-green.svg')} alt="logo"/>
         <button onClick={() => window.location.assign('/')}>Connexion</button>
       </div>
 
@@ -263,6 +286,7 @@ function TestCarbone() {
                 question={etape.question} 
                 answers={etape.answers}
                 reponse={etape.reponse}
+                idRep={etape.idRep}
                 increment={increment}
                 decrement={decrement}
                 addPoints={addPoints}
