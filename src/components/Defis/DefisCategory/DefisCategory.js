@@ -49,6 +49,32 @@ function DefisCategory(props){
     })
   }
 
+  // const [defi, setDefis] = useState({
+  //   name: "",
+  //   points: 0,
+  //   recurrence: true,
+  //   text: "",
+  //   categorie: ""
+  // })
+
+  // useEffect(() => {
+  //   const defiData ={
+  //     "name": defi.name,
+  //     "points": defi.points,
+  //     "recurrence": defi.recurrence,
+  //     "text": defi.text,
+  //     "categorie": defi.categorie
+  //   }
+
+  //   axios.get('http://127.0.0.1:8000/api/defis', defiData)
+  //   .then(function (response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   })
+  // })
+
   return(
     <div>
       {defiClicked === false ? (

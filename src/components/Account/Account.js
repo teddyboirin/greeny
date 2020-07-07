@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './account.scss';
 import Reccurent from "./Recurrent/Recurrent";
 import Categories from "./Categories/Categories";
-const axios = require('axios');
 
 function Account(props){
   const [toggle, setToggle] = useState({
@@ -29,19 +28,23 @@ function Account(props){
     })
   }
 
-  const [user, setUsers] = useState({})
-  
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/users')
-    .then(user => {
-      setUsers({
-        user: user
-      });
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  }, [])
+  // const [user, setUser] = useState([])
+
+  // const token = JSON.parse(sessionStorage.getItem('user'));
+  // console.log(token)
+  // useEffect(() => {
+  //   axios.get('http://127.0.0.1:8000/api/users', {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     }
+  //   })
+  //   .then(function (response) {
+  //     console.log(response);
+  //   })
+  //   .catch(error => {
+  //     console.log(error);
+  //   })
+  // })
 
   return(
     <div className="account">

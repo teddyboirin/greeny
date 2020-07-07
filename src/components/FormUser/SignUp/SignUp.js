@@ -11,7 +11,7 @@ function SignUp() {
     nom: "",
     prenom: "",
     password: "",
-    points: "0",
+    points: 0,
     roles: ["1"],
   })
 
