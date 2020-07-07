@@ -77,7 +77,8 @@ function SignUp() {
     axios.post('http://127.0.0.1:8000/api/login_check', loginData)
     .then(function (response) {
       console.log(response);
-      redirectToDefis()
+      localStorage.setItem('token', response.data.token);
+      //redirectToDefis()
     })
     .catch(function (error) {
       console.log(error);
