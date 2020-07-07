@@ -121,6 +121,7 @@ nav {
 nav, .logo-app {
   position: absolute;
   top: 2%;
+  z-index: 9999;
 }
 
 .logo-app {

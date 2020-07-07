@@ -53,7 +53,7 @@ function DefisCategory(props){
     <div>
       {defiClicked === false ? (
         <div>
-          <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ} , name : {chosenDefi.name}</h1>
+          <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ}</h1>
           <div className="defis_container">
             {defis[0].defis.map((defi, i) => {
               return <Defi onClick={onClick} key={i} defi={defi.name} points={defi.points}/>
