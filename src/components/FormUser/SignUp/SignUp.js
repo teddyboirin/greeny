@@ -86,7 +86,7 @@ function SignUp() {
     .then(function (response) {
       console.log(response);
       localStorage.setItem('token', response.data.token);
-      //redirectToDefis()
+      redirectToDefis()
     })
     .catch(function (error) {
       console.log(error);
