@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './signup.scss';
 const axios = require('axios');
-
+const bcrypt = require('bcryptjs');
+const saltRounds = 10;
 function SignUp() {
 
   const [signup , setSignup] = useState(true);
@@ -19,6 +20,7 @@ function SignUp() {
     email: "",
     password: ""
   })
+  
 
   const handleChange = (e) => {
     const {id , value} = e.target   
@@ -44,9 +46,15 @@ function SignUp() {
   const sendDetailsToServer = (e) => {
     e.preventDefault()
     if(registrate.nom.length && registrate.prenom.length && registrate.email.length && registrate.password.length ) {
+      bcrypt.genSalt(saltRounds, function(err, salt) {
+        bcrypt.hash('test', salt, function(err, hash) {
+            localStorage.setItem('password', hash)
+        });
+    });
+        
       const userData ={
         "email": registrate.email,
-        "password": registrate.password,
+        "password": localStorage.getItem("password"),
         "roles":registrate.roles,
         "points": registrate.points,
         "nom": registrate.nom,
