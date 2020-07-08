@@ -9,18 +9,22 @@ function DefisCategory(props){
   const [defis, setDefis] = useState([])
 
   const [defiClicked, setDefiClicked] = useState(false)
+  
+  const [users, setUser] = useState([]);
 
   const onClick = (value) => {
     setDefiClicked(value.defiClicked)
   }
 
-  useEffect(() => {
+   useEffect(() => {
     getDefis()
+    getUser()
   }, []);
+
 
   const getDefis = () => {
     const token = localStorage.getItem("token");
-    axios.get(`https://greeny.samirchalal.fr/api/defis?categorie=${window.location.pathname.split("/")[2]}`, {
+    axios.get(`http://127.0.0.1:8000/api/defis?categorie=${window.location.pathname.split("/")[2]}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -33,7 +37,24 @@ function DefisCategory(props){
       })
   }
 
+  const getUser = () => {
 
+    const token = localStorage.getItem("token");
+    axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem("id")}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then(function (response) {
+      setUser(response.data);
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
+
+ 
   return(
     <div>
       {defiClicked === false ? (
@@ -41,7 +62,9 @@ function DefisCategory(props){
           <h1 className="page_title">Choisi ton défi du jour</h1>
           <div className="defis_container">
             {defis.map((defi) => {
-                return <Defi onClick={onClick} key={defi.id} defi={defi.name} points={defi.points} />
+              return users.niveau === defi.niveau ? 
+              <Defi onClick={onClick} key={defi.id} defi={defi.name} points={defi.points} />
+              : ""
             })}
           </div>
         </div>

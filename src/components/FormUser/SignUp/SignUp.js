@@ -14,6 +14,7 @@ function SignUp() {
     password: "",
     points: 0,
     roles: ["1"],
+    niveau: "facile"
   })
 
   const [login, setLogin] = useState({
@@ -55,7 +56,8 @@ function SignUp() {
               "roles":registrate.roles,
               "points": registrate.points,
               "nom": registrate.nom,
-              "prenom":registrate.prenom
+              "prenom":registrate.prenom,
+              "niveau": registrate.niveau
             }
             //console.log(userData)
             axios.post('http://127.0.0.1:8000/api/users', userData)
@@ -83,9 +85,23 @@ function SignUp() {
       
       axios.post('http://127.0.0.1:8000/api/login_check', loginData)
       .then(function (response) {
-        console.log(response);
         localStorage.setItem('token', response.data.token);
-        redirectToDefis()
+        //redirectToDefis()
+        const token = localStorage.getItem("token");
+        axios.get(`http://127.0.0.1:8000/api/users?email=${login.email}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        })
+        .then(function (response) {
+          console.log(response);
+          localStorage.setItem('niveau', response.data['hydra:member'][0].niveau);
+          localStorage.setItem('email', response.data['hydra:member'][0].email);
+          localStorage.setItem('id', response.data['hydra:member'][0].id);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
       })
       .catch(function (error) {
         console.log(error);

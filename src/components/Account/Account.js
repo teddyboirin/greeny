@@ -36,13 +36,14 @@ function Account(props){
   const getUser = () => {
 
     const token = localStorage.getItem("token");
-    axios.get('http://127.0.0.1:8000/api/users', {
+    axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem("id")}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       }
     })
     .then(function (response) {
-      setUser(response.data['hydra:member']);
+      setUser(response.data);
+
     })
     .catch(function (error) {
       console.log(error);
@@ -57,12 +58,7 @@ function Account(props){
   return(
     <div className="account">
       <div className="title_account">
-        {
-          users.map(user => {
-             return <h1 className="page_title" key={user.id}>Hello {user.prenom}</h1>
-          })
-        }
-    
+        <h1 className="page_title">Hello {users.prenom}</h1>
         <h3 className="page_subtitle">Un nouveau jour, un nouveau défi</h3>
       </div>
 
@@ -87,12 +83,7 @@ function Account(props){
             <input type="file" accept=".jpg, .jpeg, .png" onChange={handleChange}/>
             <img src={file.image} alt=""/>
           </div>
-
-          {
-            users.map(user => {
-              return  <InfoPerso key={user.id} prenom={user.prenom} nom={user.nom} email={user.email} />
-            })
-          }
+          <InfoPerso key={users.id} prenom={users.prenom} nom={users.nom} email={users.email} />
         </div>
 
       </div>
