@@ -32,7 +32,6 @@ function DefisCategory(props){
     })
     .then(function (response) {
       setDefis(response.data['hydra:member'])
-      console.log(response);
     })
     .catch(function (error) {
       console.log(error);
