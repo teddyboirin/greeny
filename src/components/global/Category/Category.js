@@ -3,12 +3,6 @@ import './category.scss';
 
 
 function Category(props){
-
-  const onClick = () => {
-    props.onClick({
-      categoryName: props.categ
-    })
-  }
   
   return(
     <div onClick={()=> window.location.assign(`/defis/` + props.categ)} className="defis_categ_bloc">

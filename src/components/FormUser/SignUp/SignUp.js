@@ -75,21 +75,24 @@ function SignUp() {
 
   const sendLoginToServer = (e) => {
     e.preventDefault()
-
-    const loginData ={
-      "password": login.password,
-      "username": login.email
+    if(login.email.length && login.password.length ) {
+      const loginData ={
+        "password": login.password,
+        "username": login.email
+      }
+      
+      axios.post('http://127.0.0.1:8000/api/login_check', loginData)
+      .then(function (response) {
+        console.log(response);
+        localStorage.setItem('token', response.data.token);
+        redirectToDefis()
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    } else {
+      alert("Rempli tous les champs")
     }
-    
-    axios.post('http://127.0.0.1:8000/api/login_check', loginData)
-    .then(function (response) {
-      console.log(response);
-      localStorage.setItem('token', response.data.token);
-      redirectToDefis()
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
   }
 
   const redirectToTest = () => {
