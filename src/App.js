@@ -11,6 +11,10 @@ import TestCarbone from './components/FormUser/TestCarbone/TestCarbone';
 function App(props) {
   return (
     <div className="App">
+      <div className="logo_mobile_bloc">
+        <img className='logo_mobile' src={require('./assets/logo_g.svg')} alt="logo"/>
+      </div>
+      
       <img src={require('./assets/logo-green.svg')} alt="logo" className="logo-app"/>
       
       {window.location.pathname === '/' ?  
@@ -20,7 +24,7 @@ function App(props) {
           <TestCarbone /> 
         : 
         <div>
-          <img src={dotsUp} alt="dots_up"/>
+          <img className="dots_up" src={dotsUp} alt="dots_up"/>
           <Routing />
           <img className="dots_down" src={dotsDown} alt="dots_down"/>
         </div>

@@ -29,10 +29,21 @@ body {
   font-size: 1.7rem;
   font-weight: bold;
   margin: 7rem 0 0 5rem;
-  position: absolute;
-  top: 0;
+  
   @media(min-width: 600px){
     margin: 5rem 0 0 5rem;
+  }
+
+  @media(min-width: 1024px){
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media(max-width: 798px){
+  .dots_up {
+    position: absolute;
+    top: 0;
   }
 }
 
