@@ -36,5 +36,8 @@ Notre site comporte peu d’images, donc la majorité de ces dernières sont des
 ### `Bcrypt`
 Nous avons utilisé bcrypt pour que le mot de passe soit hashé lors de l'envoie du formulaire d'inscrpition. Et affiche ainsi un mot de passe crypté dans la base de données 
 
+### `Sass`
+Sass nous a été utile pour la mise en place de viariable de fonts et de couleurs mais aussi de mixins pour le spritesheet mis en place dans le projet. De plus le préprocesseur permet de modulariser le css et donc d'éviter de répéter du code.
+
 [Axios](https://github.com/axios/axios)<br/>
 [Bcrypt](https://www.npmjs.com/package/bcrypt)<br/>
