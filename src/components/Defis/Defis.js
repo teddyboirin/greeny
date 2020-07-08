@@ -8,22 +8,22 @@ function Defis(){
   const categories = useState({
     categories: [
       {
-        name: 'Alimentation'
+        name: 'alimentation'
       },
       {
-        name: 'Énergie'
+        name: 'energie'
       },
       {
-        name: 'Déchets'
+        name: 'dechets'
       },
       {
-        name: 'Déplacements'
+        name: 'deplacements'
       },
       {
-        name: 'DIY'
+        name: 'diy'
       },
       {
-        name: 'Au travail'
+        name: 'travail'
       }
     ]
   })
@@ -38,7 +38,9 @@ function Defis(){
   }
 
   return(
+   
     <div className="defis">
+
       {clickCategory === false ? ( 
         <div>
           <h1 className="page_title">Choisi une catégorie<br/>pour ton défi du jour</h1>

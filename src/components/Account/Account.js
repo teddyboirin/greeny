@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import './account.scss';
 import Reccurent from "./Recurrent/Recurrent";
 import Categories from "./Categories/Categories";
+import InfoPerso from "./InfoPerso/InfoPerso";
+
 const axios = require('axios');
 
 function Account(props){
@@ -14,6 +16,8 @@ function Account(props){
   const [file, setFile] = useState({
     image: null
   })
+
+  const [users, setUser] = useState([]);
 
   function handleChange(event) {
     setFile({
@@ -29,26 +33,36 @@ function Account(props){
     })
   }
 
-  const token = localStorage.getItem("token");
-  console.log(token)
-  useEffect(() => {
-    axios.get('https://greeny.samirchalal.fr/api/users', {
+  const getUser = () => {
+
+    const token = localStorage.getItem("token");
+    axios.get('http://127.0.0.1:8000/api/users', {
       headers: {
         Authorization: `Bearer ${token}`,
       }
     })
     .then(function (response) {
-      console.log(response);
+      setUser(response.data['hydra:member']);
     })
-    .catch(error => {
+    .catch(function (error) {
       console.log(error);
     })
-  })
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
+  console.log(users)
 
   return(
     <div className="account">
       <div className="title_account">
-        <h1 className="page_title">Hello</h1>
+        {
+          users.map(user => {
+             return <h1 className="page_title" key={user.id}>Hello {user.prenom}</h1>
+          })
+        }
+    
         <h3 className="page_subtitle">Un nouveau jour, un nouveau défi</h3>
       </div>
 
@@ -61,7 +75,7 @@ function Account(props){
 
           { !toggle.show ? (
             <div>
-              <Categories />
+              <Categories  />
             </div>
           ) : (
             <Reccurent />
@@ -73,6 +87,12 @@ function Account(props){
             <input type="file" accept=".jpg, .jpeg, .png" onChange={handleChange}/>
             <img src={file.image} alt=""/>
           </div>
+
+          {
+            users.map(user => {
+              return  <InfoPerso key={user.id} prenom={user.prenom} nom={user.nom} email={user.email} />
+            })
+          }
         </div>
 
       </div>

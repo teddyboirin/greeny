@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useParams } from "react";
 import './defiscategory.scss';
 import Defi from "../../global/Defi/Defi";
 import DefiDescription from "../../global/DefiDescription/DefiDescription";
@@ -12,51 +12,39 @@ function DefisCategory(props){
 
   const [chosenDefi, setChosenDefi] = useState({
     name: '',
-    points: 0
+    points: 0,
+    text: ''
   })
 
   const onClick = (value) => {
     setDefiClicked(value.defiClicked)
     setChosenDefi({
       name: value.name,
-      points: value.points
+      points: value.points,
+      text: value.text,
+      categorie: value.categorie
     })
   }
 
-  const token = localStorage.getItem("token");
-  console.log(token)
-  axios.get('http://127.0.0.1:8000/api/defis', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      }
-    })
-    .then(function (response) {
-      setDefis(response.data['hydra:member'])
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+  useEffect(() => {
+    getDefis()
+  }, []);
 
-  // const getDefis = () => {
-  //   axios.get('http://127.0.0.1:8000/api/defis', {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     }
-  //   })
-  //   .then(function (response) {
-  //     setDefis(response.data['hydra:member'])
-  //     console.log(response);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   })
-  // }
-  
+  const getDefis = () => {
+    const token = localStorage.getItem("token");
+    axios.get(`https://greeny.samirchalal.fr/api/defis?categorie=${window.location.pathname.split("/")[2]}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(function (response) {
+        setDefis(response.data['hydra:member'])
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
 
-  // useEffect(() => {
-  //     getDefis()
-  //   }, [defis]
-  // );
 
   return(
     <div>
@@ -65,12 +53,14 @@ function DefisCategory(props){
           <h1 className="page_title">Choisi ton défi du jour<br></br>Catégorie : {props.categ}</h1>
           <div className="defis_container">
             {defis.map((defi) => {
-              return <Defi onClick={onClick} key={defi.id} defi={defi.name} points={defi.points}/>
+                return <Defi onClick={onClick} key={defi.id} defi={defi.name} points={defi.points} />
             })}
           </div>
         </div>
       ) : (
-        <DefiDescription name={chosenDefi.name} points={chosenDefi.points} />
+        defis.map((chosenDefi) => {
+         return <DefiDescription key={chosenDefi.id} name={chosenDefi.name} points={chosenDefi.points} text={chosenDefi.text}/>
+        })
       )}
     </div>
   )

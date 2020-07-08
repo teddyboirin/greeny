@@ -8,27 +8,27 @@ function Categories(){
     categories: [
       {
         name: 'Alimentation',
-        points: 40
+        points: 0
       },
       {
         name: 'Énergie',
-        points: 20
+        points: 0
       },
       {
         name: 'Déchets',
-        points: 12
+        points: 0
       },
       {
         name: 'Déplacements',
-        points: 8
+        points: 0
       },
       {
         name: 'DIY',
-        points: 8
+        points: 0
       },
       {
         name: 'Au travail',
-        points: 15
+        points: 0
       }
     ]
   })
@@ -43,7 +43,7 @@ function Categories(){
 
       <div>
         <h3>Total des points accumulés</h3>
-        <p>{totalPoints}pts</p>
+        <p className="total_points">{totalPoints}pts</p>
       </div>
     </div>
   )

@@ -14,6 +14,7 @@ const Favoris = lazy(() => import('../Favoris/Favoris'));
 const Account = lazy(() => import('../Account/Account'));
 const SignUp = lazy(() => import('../FormUser/SignUp/SignUp'));
 const TestCarbone = lazy(() => import('../FormUser/TestCarbone/TestCarbone'));
+const DefisCategory = lazy(() => import('../Defis/DefisCategory/DefisCategory'));
 
 function Routing() {
   return (
@@ -51,6 +52,9 @@ function Routing() {
             </Route>
             <Route path="/account">
               <Account />
+            </Route>
+            <Route path="/defis/:categorie">
+              <DefisCategory />
             </Route>
             <Route path="/defis">
               <Defis />
