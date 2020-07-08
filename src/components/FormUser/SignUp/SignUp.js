@@ -47,28 +47,29 @@ function SignUp() {
     e.preventDefault()
     if(registrate.nom.length && registrate.prenom.length && registrate.email.length && registrate.password.length ) {
       bcrypt.genSalt(saltRounds, function(err, salt) {
-        bcrypt.hash('test', salt, function(err, hash) {
-            localStorage.setItem('password', hash)
+        bcrypt.hash(registrate.password, salt, function(err, hash) {
+            let hashN = hash;
+            const userData ={
+              "email": registrate.email,
+              "password": hashN,
+              "roles":registrate.roles,
+              "points": registrate.points,
+              "nom": registrate.nom,
+              "prenom":registrate.prenom
+            }
+            //console.log(userData)
+            axios.post('http://127.0.0.1:8000/api/users', userData)
+            .then(function (response) {
+              console.log(response);
+              redirectToTest()
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
         });
     });
         
-      const userData ={
-        "email": registrate.email,
-        "password": localStorage.getItem("password"),
-        "roles":registrate.roles,
-        "points": registrate.points,
-        "nom": registrate.nom,
-        "prenom":registrate.prenom
-      }
-      //console.log(userData)
-      axios.post('http://127.0.0.1:8000/api/users', userData)
-      .then(function (response) {
-        console.log(response);
-        redirectToTest()
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+     
     } else {
       alert("Rempli tous les champs")
     }
