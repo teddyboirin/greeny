@@ -22,7 +22,7 @@ Notre projet est une plateforme qui va permettre aux gens de devenir plus éco-r
 
 Front: 
 ### `React.js `  
-Déjà utilisé lors du projet fil rouge donc toute l'équipe est à l'aise avec cette librairie
+Déjà utilisé lors du projet fil rouge donc toute l'équipe est à l'aise avec cette librairie. Aussi il permet de créer des composants réutilisables dans d'autres parties du site.
 
 ### `Progressive Web App (PWA) `  
 Notre plateforme est une application qui va plus être destiné à être utilisé sur son téléphone, donc on veut que l'utilisateur ai l'application sur son téléphone et pouvoir lui envoyer des notifications pour réaliser des défis. Cependant nous avons pas eu le temps de s'occuper du mode offline. 
