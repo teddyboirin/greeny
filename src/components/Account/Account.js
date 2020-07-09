@@ -53,7 +53,7 @@ function Account(props){
   useEffect(() => {
     getUser()
   }, [])
-  console.log(users)
+
 
   return(
     <div className="account">

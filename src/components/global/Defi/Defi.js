@@ -12,7 +12,7 @@ function Defi(props){
   }
 
   return(
-    <div onClick={() => window.location.assign(`/defis/` + props.categ + '/' + props.id)} className='defi'>
+    <div className='defi'>
       <div className='defi_top'>
         <span className="defi_bfr"></span>
         <div>{props.points}pts</div>

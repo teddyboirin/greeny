@@ -1,65 +1,46 @@
-import React , {useState} from "react";
+import React , {useState, useEffect} from "react";
 import './recurrent.scss';
 import Defi from "../../global/Defi/Defi";
 import DefiDescription from "../../global/DefiDescription/DefiDescription";
+const axios = require('axios');
 
 function Reccurent(){
+const [recurrence, setReccurence] = useState([]);
 
-  const defiReccurent = useState({
-    defis: [
-      {
-        points: 5,
-        name: 'Consommer des oeufs de poule élevé en plein air'
-      },
-      {
-        points: 15,
-        name: 'Consommer au maximum des produits frais'
-      },
-      {
-        points: 10,
-        name: 'Acheter un calendrier des fruits et légumes de saison'
-      },
-      {
-        points: 8,
-        name: 'Éviter au maximum les plats préparés industriels'
-      },
-      {
-        points: 20,
-        name: 'Prioriser les aliments encore consommables'
-      },
-      {
-        points: 10,
-        name: 'Faire l’inventaire de ses placards avant de faire les courses'
+  useEffect(() => {
+    getReccurrence()
+  }, [])
+  const getReccurrence = () => {
+    const token = localStorage.getItem("token");
+    axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem('id')}/defis?recurrence=1`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
       }
-    ]
-  })
-
-  const [defiClicked, setDefiClicked] = useState(false)
-
-  const [chosenDefi, setChosenDefi] = useState({
-    name: '',
-    points: 0
-  })
-
-  const onClick = (value) => {
-    setDefiClicked(value.defiClicked)
-    setChosenDefi({
-      name: value.name,
-      points: value.points
+    })
+    .then(function (response) {
+      setReccurence(response.data["hydra:member"]);
+      console.log(recurrence)
+    })
+    .catch(function (error) {
+      console.log(error);
     })
   }
+    
+
 
   return(
     <div>
-      {defiClicked === false ? (
+
         <div className="recurrence">
-        {defiReccurent[0].defis.map((defi, i) => {
-          return <Defi onClick={onClick} key={i} points={defi.points} defi={defi.name}/>
-        })}
+          {
+            recurrence.map((recurrent, i) => {
+              return <a key={i} href={"/item/" + recurrent.id}><Defi points={recurrent.points} defi={recurrent.name}/></a>
+            })
+          }
+           
+
         </div>
-      ) : (
-        <DefiDescription name={chosenDefi.name} points={chosenDefi.points} />
-      )}
+     
     </div>
   )
 }

@@ -24,7 +24,7 @@ function DefisCategory(props){
 
   const getDefis = () => {
     const token = localStorage.getItem("token");
-    axios.get(`http://127.0.0.1:8000/api/defis?categorie=${window.location.pathname.split("/")[2]}`, {
+    axios.get(`http://127.0.0.1:8000/api/defis?categorie=${window.location.pathname.split("/")[2]}&niveau=${localStorage.getItem("niveau")}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -58,20 +58,18 @@ function DefisCategory(props){
  
   return(
     <div>
+    
         <div>
           <h1 className="page_title">Choisi ton défi du jour</h1>
           <div className="defis_container">
             {defis.map((defi, i) => {
               return users.niveau === defi.niveau ? 
-              <Defi key={i} onClick={onClick} key={defi.id} defi={defi.name} points={defi.points} id={defi.id} categ={defi.categorie}/>
+              <a href={"/item/" + defi.id} key={i}><Defi  key={defi.id} defi={defi.name} points={defi.points} id={defi.id} categ={defi.categorie}/></a>
               : ""
             })}
           </div>
         </div>
-        {defis.map((chosenDefi, j) => {
-         return <DefiDescription key={j} name={chosenDefi.name} points={chosenDefi.points} text={chosenDefi.text} id={chosenDefi.id}/>
-        })}
-        
+     
     </div>
   )
 }

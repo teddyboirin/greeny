@@ -15,6 +15,7 @@ const Account = lazy(() => import('../Account/Account'));
 const SignUp = lazy(() => import('../FormUser/SignUp/SignUp'));
 const TestCarbone = lazy(() => import('../FormUser/TestCarbone/TestCarbone'));
 const DefisCategory = lazy(() => import('../Defis/DefisCategory/DefisCategory'));
+const DefiDescription = lazy(() => import('../global/DefiDescription/DefiDescription'));
 
 function Routing() {
   return (
@@ -55,6 +56,9 @@ function Routing() {
             </Route>
             <Route path="/defis/:categorie">
               <DefisCategory />
+            </Route>
+             <Route path="/item/:id">
+              <DefiDescription />
             </Route>
             <Route path="/defis">
               <Defis />
