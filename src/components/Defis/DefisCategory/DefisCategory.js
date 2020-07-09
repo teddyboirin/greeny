@@ -31,6 +31,7 @@ function DefisCategory(props){
       })
       .then(function (response) {
         setDefis(response.data['hydra:member'])
+        console.log(response)
       })
       .catch(function (error) {
         console.log(error);
@@ -57,22 +58,20 @@ function DefisCategory(props){
  
   return(
     <div>
-      {defiClicked === false ? (
         <div>
           <h1 className="page_title">Choisi ton défi du jour</h1>
           <div className="defis_container">
-            {defis.map((defi) => {
+            {defis.map((defi, i) => {
               return users.niveau === defi.niveau ? 
-              <Defi onClick={onClick} key={defi.id} defi={defi.name} points={defi.points} />
+              <Defi key={i} onClick={onClick} key={defi.id} defi={defi.name} points={defi.points} id={defi.id} categ={defi.categorie}/>
               : ""
             })}
           </div>
         </div>
-      ) : (
-        defis.map((chosenDefi) => {
-         return <DefiDescription key={chosenDefi.id} name={chosenDefi.name} points={chosenDefi.points} text={chosenDefi.text}/>
-        })
-      )}
+        {defis.map((chosenDefi, j) => {
+         return <DefiDescription key={j} name={chosenDefi.name} points={chosenDefi.points} text={chosenDefi.text} id={chosenDefi.id}/>
+        })}
+        
     </div>
   )
 }

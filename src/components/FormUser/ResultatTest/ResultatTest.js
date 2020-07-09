@@ -10,18 +10,18 @@ function ResultatTest(props) {
 
   const [users, setUser] = useState([]);
   const token = localStorage.getItem("token");
-  axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem("id")}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    }
-  })
-  .then(function (response) {
-    setUser(response.data);
-
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+    axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem("id")}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then(function (response) {
+      setUser(response.data);
+      
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 
   const setLevel = (level) => {
     const token = localStorage.getItem("token");
@@ -43,7 +43,7 @@ function ResultatTest(props) {
   } else if(props.totalPoints >= 12 && props.totalPoints <= 21) {
      setLevel("moyen")
   } else if(props.totalPoints >= 22 && props.totalPoints <= 32) {     
-       setLevel("facile")
+      setLevel("facile")
   }
 
   return (

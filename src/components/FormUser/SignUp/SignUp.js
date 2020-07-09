@@ -91,7 +91,7 @@ function SignUp() {
         axios.get(`http://127.0.0.1:8000/api/users?email=${login.email}`, {
           headers: {
             Authorization: `Bearer ${token}`,
-          }
+          } 
         })
         .then(function (response) {
           console.log(response);

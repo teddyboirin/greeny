@@ -1,9 +1,43 @@
 import React, { useState } from "react";
 import './defidescription.scss'
+const axios = require('axios');
 
 function DefiDescription(props){
 
   const [checkDefi, setCheckDefi] = useState(false);
+  const [users, setUser] = useState([]);
+
+  const token = localStorage.getItem("token");
+  axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem("id")}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  })
+  .then(function (response) {
+    setUser(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  const setDefi = () => {
+    const token = localStorage.getItem("token");
+    axios.put(`http://127.0.0.1:8000/api/defis/${props.id}`, {
+      "users": [
+          "/api/users/" + localStorage.getItem("id")
+      ]},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+    })
+    .then(function (response) {
+      console.log(response.data)
+      console.log('ok', props.id)
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
 
   return(
     <div>
@@ -19,7 +53,7 @@ function DefiDescription(props){
         </div>
         <div className='DefiDescription_part DefiDescription_part_2'>
           <h2>As-tu relevé le défi ?</h2>
-          <button onClick={() => setCheckDefi(true)}>Je l'ai fait</button>
+          <button onClick={setDefi}>Je l'ai fait</button>
           <div>{props.points}pts</div>
         </div>
         </div>
