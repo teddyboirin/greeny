@@ -98,6 +98,7 @@ function SignUp() {
           localStorage.setItem('niveau', response.data['hydra:member'][0].niveau);
           localStorage.setItem('email', response.data['hydra:member'][0].email);
           localStorage.setItem('id', response.data['hydra:member'][0].id);
+          redirectToDefis()
         })
         .catch(function (error) {
           console.log(error);

@@ -38,8 +38,10 @@ function Categories(){
 
   useEffect(() => {
     getReccurrence()
+          addPoints()
+
   }, [])
-  const getReccurrence = () => {
+  const getReccurrence = (index) => {
     const token = localStorage.getItem("token");
     axios.get(`https://greeny.samirchalal.fr/api/users/${localStorage.getItem('id')}/defis`, {
       headers: {
@@ -48,29 +50,47 @@ function Categories(){
     })
     .then(function (response) {
       setPointsCateg(response.data["hydra:member"]);
-      addPoints()
-      console.log(response.data["hydra:member"])
+      //console.log(response.data["hydra:member"])
     })
     .catch(function (error) {
       console.log(error);
     })
   }
 
+  const [newArray, setNewArray] = useState([])
   const addPoints = () => {
+
     pointsCateg.map((point, i) => {
-      return <div key={i}>{point.points} </div>
+      
+           
+        if (point === point.categorie) {
+          newArray.push({point: point.points, categ: point.categorie})
+          setNewArray(point)
+        }
+              console.log(newArray)
+
+      // let categArray = [] 
+      // if(newArray.includes(point.categorie) >= 2) {
+      //   categArray.push(newArray)
+      // }
+
+
+      // var temp = point.categorie;
+      // var count = (newArray.temp.match(point.categorie) || []).length;
+      // console.log(count);
     })
+
   }
-  const totalPoints = categories[0].categories.reduce((total, category) => total + category.points, 0);
+  const totalPoints = pointsCateg.reduce((total, point) => total + point.points, 0);
   
   return(
     <div className="defis_categ_container">
-      {categories[0].categories.map((category, i) => {
-        return <Category key={i} categ={category.name} points={category.points + 'pts'}/>
+      {pointsCateg.map((point, i) => {
+        return <Category key={i} categ={point.categorie} points={point.points + 'pts'}/>
       })}
 
       <div>
-        <h3>Total des points accumulés</h3>
+        <h3 onClick={addPoints}>Total des points accumulés</h3>
         <p className="total_points">{totalPoints}pts</p>
       </div>
     </div>

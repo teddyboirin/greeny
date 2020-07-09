@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import './assoc.scss'
 const axios = require('axios');
+
 function Assoc(props){
 
   const [assoc, setAssoc] = useState([]);
@@ -22,13 +24,14 @@ function Assoc(props){
   return(
     <div className="assoc">
       <h1 className="page_title">Découvrez les associations</h1>
-
+      <div className="assoc_container">
       {
         assoc.map((asso, i) => 
-          <div key={i}>
-            <img src={asso.image}/>
+          <div key={i} className="assoc_bloc">
+            <div className="circle"></div>
+            <img src={asso.image} alt="association" className="assoc_image"/>
 
-            <div>
+            <div className="assoc_info">
               <p>{asso.name}</p>
               <button>
                 <a target="blank" href={asso.url}>Découvrir</a>
@@ -37,6 +40,7 @@ function Assoc(props){
           </div>
         )
       }
+      </div>
     </div>
   );
 }
