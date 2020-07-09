@@ -30,17 +30,13 @@ const [recurrence, setReccurence] = useState([]);
 
   return(
     <div>
-
-        <div className="recurrence">
-          {
-            recurrence.map((recurrent, i) => {
-              return <a key={i} href={"/item/" + recurrent.id}><Defi points={recurrent.points} defi={recurrent.name}/></a>
-            })
-          }
-           
-
-        </div>
-     
+      <div className="recurrence">
+        {
+          recurrence.map((recurrent, i) => {
+            return <a key={i} href={"/item/" + recurrent.id}><Defi points={recurrent.points} defi={recurrent.name}/></a>
+          })
+        }
+      </div>
     </div>
   )
 }
