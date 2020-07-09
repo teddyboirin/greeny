@@ -6,7 +6,7 @@ function Assoc(props){
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios.get(`http://127.0.0.1:8000/api/associations`, {
+    axios.get(`https://greeny.samirchalal.fr/api/associations`, {
       headers: {
         Authorization: `Bearer ${token}`,
       }

@@ -4,6 +4,7 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
 .defis_categ_container {
   display: flex;
   flex-wrap: wrap;
+  max-width: 65%;
 }
 
 .defis_categ_bloc {

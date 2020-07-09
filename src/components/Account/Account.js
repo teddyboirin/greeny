@@ -36,7 +36,7 @@ function Account(props){
   const getUser = () => {
 
     const token = localStorage.getItem("token");
-    axios.get(`http://127.0.0.1:8000/api/users/${localStorage.getItem("id")}`, {
+    axios.get(`https://greeny.samirchalal.fr/api/users/${localStorage.getItem("id")}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       }

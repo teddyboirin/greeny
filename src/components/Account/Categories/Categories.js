@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './categories.scss';
 import Category from "../../global/Category/Category";
+const axios = require('axios');
 
 function Categories(){
 
@@ -32,7 +33,34 @@ function Categories(){
       }
     ]
   })
-  
+
+  const [pointsCateg, setPointsCateg] = useState([])
+
+  useEffect(() => {
+    getReccurrence()
+  }, [])
+  const getReccurrence = () => {
+    const token = localStorage.getItem("token");
+    axios.get(`https://greeny.samirchalal.fr/api/users/${localStorage.getItem('id')}/defis`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then(function (response) {
+      setPointsCateg(response.data["hydra:member"]);
+      addPoints()
+      console.log(response.data["hydra:member"])
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
+
+  const addPoints = () => {
+    pointsCateg.map((point, i) => {
+      return <div key={i}>{point.points} </div>
+    })
+  }
   const totalPoints = categories[0].categories.reduce((total, category) => total + category.points, 0);
   
   return(

@@ -60,7 +60,7 @@ function SignUp() {
               "niveau": registrate.niveau
             }
             //console.log(userData)
-            axios.post('http://127.0.0.1:8000/api/users', userData)
+            axios.post('https://greeny.samirchalal.fr/api/users', userData)
             .then(function (response) {
               console.log(response);
               redirectToTest()
@@ -83,12 +83,12 @@ function SignUp() {
         "username": login.email
       }
       
-      axios.post('http://127.0.0.1:8000/api/login_check', loginData)
+      axios.post('https://greeny.samirchalal.fr/api/login_check', loginData)
       .then(function (response) {
         localStorage.setItem('token', response.data.token);
         //redirectToDefis()
         const token = localStorage.getItem("token");
-        axios.get(`http://127.0.0.1:8000/api/users?email=${login.email}`, {
+        axios.get(`https://greeny.samirchalal.fr/api/users?email=${login.email}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           } 

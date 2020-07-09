@@ -5,10 +5,11 @@ const axios = require('axios');
 function DefiDescription(props){
   const [currentDefi, setCurrentDefi] = useState([])
   const [users, setUser] = useState([]);
-  // const [checkDefi, setCheckDefi] = useState(false);
+  const [checkDefi, setCheckDefi] = useState(false);
+  
   const setDefi = () => {
     const token = localStorage.getItem("token");
-    axios.put(`http://127.0.0.1:8000/api/defis/${currentDefi.id}`, {
+    axios.put(`https://greeny.samirchalal.fr/api/defis/${currentDefi.id}`, {
       "users": [
           "/api/users/" + localStorage.getItem("id")
       ]},
@@ -26,20 +27,20 @@ function DefiDescription(props){
     })
   }
 
- useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
-  axios.get(`http://127.0.0.1:8000/api/defis/${window.location.pathname.split("/")[2]}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    }
-  })
-  .then(function (response) {
-    console.log(response.data)
-    setCurrentDefi(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+    axios.get(`https://greeny.samirchalal.fr/api/defis/${window.location.pathname.split("/")[2]}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then(function (response) {
+      console.log(response.data)
+      setCurrentDefi(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
  }, [])
 
 
