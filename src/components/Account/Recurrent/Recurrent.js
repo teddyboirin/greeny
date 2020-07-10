@@ -1,7 +1,7 @@
 import React , {useState, useEffect} from "react";
 import './recurrent.scss';
 import Defi from "../../global/Defi/Defi";
-import DefiDescription from "../../global/DefiDescription/DefiDescription";
+
 const axios = require('axios');
 
 function Reccurent(){

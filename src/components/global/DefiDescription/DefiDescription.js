@@ -4,7 +4,6 @@ const axios = require('axios');
 
 function DefiDescription(props){
   const [currentDefi, setCurrentDefi] = useState([])
-  const [users, setUser] = useState([]);
   const [checkDefi, setCheckDefi] = useState(false);
   
   const setDefi = () => {
@@ -71,9 +70,9 @@ function DefiDescription(props){
           <h1>BRAVO</h1>
           <h2>Tu as relevé le défi !</h2>
           <div className='DefiChecked_points'>
-            {props.points}pts
-            <span>+{props.points}</span>
-            <span>+{props.points}</span>
+            {currentDefi.points}pts
+            <span>+{currentDefi.points}</span>
+            <span>+{currentDefi.points}</span>
           </div>
           <div className='DefiChecked_button' onClick={() => window.location.assign('/defis')}>
             <div className='DefiChecked_button_hover'>

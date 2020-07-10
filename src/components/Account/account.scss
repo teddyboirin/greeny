@@ -2,28 +2,43 @@
 @import '../../styles/var/var.scss';
 
 .account {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+
+  @media screen and (max-width: 1023px) {
+    display: block;
+  }
 
   .title_account {
     position: absolute;
     top: 0;
 
+    @media screen and (max-width: 1023px) {
+      position: static;
+    }
+
     .page_title {
       font-size: 4.5rem;
       position: static;
+      margin-top: 6rem;
+
+
+      @media screen and (max-width: 1023px) {
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 
   .account_inner_bloc {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    align-items: center;
-    margin-top: -30px;
+    margin-top: 1rem;
   }
 
   .page_subtitle {
     margin-left: 5rem;
     display: flex;
     align-items: center;
+    margin-top: 1rem;
 
     &:before {
       content: "";
@@ -49,6 +64,10 @@
 
   .account_inner_right {
     padding-left: 4rem;
+
+    @media screen and (max-width: 1023px) {
+      padding: 0;
+    }
 
     h3 {
       color: $grey;
@@ -79,12 +98,19 @@
     width: 375.23px;
     height: 34rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (max-width: 1023px) {
+      margin: 4rem auto 5rem;
+    }
   }
 
   .avatar {
     display: flex;
     justify-content: center;
-    margin: 2rem auto;
+    margin: 0 auto;
     position: relative;
 
     img {
@@ -102,5 +128,9 @@
       left: 50%;
       transform: translateX(-50%);
     }
+  }
+
+  .defis_categ_container {
+    max-width: unset;
   }
 }

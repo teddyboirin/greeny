@@ -3,14 +3,6 @@ import './defi.scss'
 
 function Defi(props){
 
-  const onClick = () => {
-    props.onClick({
-      defiClicked: true,
-      name: props.defi,
-      points: props.points
-    })
-  }
-
   return(
     <div className='defi'>
       <div className='defi_top'>

@@ -29,9 +29,9 @@ function Routing() {
             <li>
               <Link to="/assoc">Associations</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/attente">En attente</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/account">Compte</Link>
             </li>

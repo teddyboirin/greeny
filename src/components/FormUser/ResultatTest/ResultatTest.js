@@ -70,7 +70,7 @@ function ResultatTest(props) {
       }
       </div>
 
-      <button onClick={() => window.location.assign('/defis')}>Commencer</button>
+      <button onClick={() => window.location.assign('/signup')}>Commencer</button>
     </div>
   )
 }

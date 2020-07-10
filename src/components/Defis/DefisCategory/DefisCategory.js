@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
 import './defiscategory.scss';
 import Defi from "../../global/Defi/Defi";
-import DefiDescription from "../../global/DefiDescription/DefiDescription";
+
 const axios = require('axios');
 
 function DefisCategory(props){
 
   const [defis, setDefis] = useState([])
-
-  const [defiClicked, setDefiClicked] = useState(false)
-  
   const [users, setUser] = useState([]);
 
-  const onClick = (value) => {
-    setDefiClicked(value.defiClicked)
-  }
-
-   useEffect(() => {
+  useEffect(() => {
     getDefis()
     getUser()
   }, []);
