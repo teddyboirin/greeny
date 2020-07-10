@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e35c11-e7bd-442d-9d5d-03cb7ed15440" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/OnBoarding/OnBoarding.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OnBoarding/onboarding.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Defis/Defis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Defis/Defis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Defis/defis.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Defis/defis.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Router/Routing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Router/Routing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Router/routing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Router/routing.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +26,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Router/routing.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-852">
+            <state relative-caret-position="-1663">
               <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Assoc/assoc.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-90" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="279" lean-forward="true" selection-start-line="279" selection-end-line="279" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,10 +73,10 @@
         <option value="$PROJECT_DIR$/src/components/OnBoarding/OnBoarding.js" />
         <option value="$PROJECT_DIR$/src/components/Defis/defis.scss" />
         <option value="$PROJECT_DIR$/src/components/OnBoarding/onboarding.scss" />
-        <option value="$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Defis/Defis.js" />
         <option value="$PROJECT_DIR$/src/components/Router/routing.scss" />
+        <option value="$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js" />
       </list>
     </option>
   </component>
@@ -102,15 +113,14 @@
               <item name="greeny" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Defis" type="462c0819:PsiDirectoryNode" />
+              <item name="Account" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="greeny" type="b2602c69:ProjectViewProjectNode" />
               <item name="greeny" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Defis" type="462c0819:PsiDirectoryNode" />
-              <item name="DefisCategory" type="462c0819:PsiDirectoryNode" />
+              <item name="Assoc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="greeny" type="b2602c69:ProjectViewProjectNode" />
@@ -126,21 +136,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="FormUser" type="462c0819:PsiDirectoryNode" />
               <item name="TestCarbone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="greeny" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greeny" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="greeny" type="b2602c69:ProjectViewProjectNode" />
-              <item name="greeny" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="Category" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="greeny" type="b2602c69:ProjectViewProjectNode" />
@@ -194,18 +189,18 @@
       <updated>1594311245188</updated>
       <workItem from="1594311246878" duration="3029000" />
       <workItem from="1594339778264" duration="1228000" />
-      <workItem from="1594341099142" duration="5539000" />
+      <workItem from="1594341099142" duration="6217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9796000" />
+    <option name="totallyTimeSpent" value="10474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -220,7 +215,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.08877551" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23367347" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -295,16 +290,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/illu_eco.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="154" column="52" selection-start-line="154" selection-start-column="52" selection-end-line="154" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Defis/DefisCategory/DefisCategory.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -391,8 +376,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Router/routing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-852">
+        <state relative-caret-position="-1663">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Assoc/assoc.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FormUser/TestCarbone/TestCarbone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="279" lean-forward="true" selection-start-line="279" selection-end-line="279" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

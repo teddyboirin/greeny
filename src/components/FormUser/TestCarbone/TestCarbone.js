@@ -265,7 +265,7 @@ function TestCarbone() {
     <div className="test_carbone">
 
       <div className="header_test">
-        <button onClick={() => window.location.assign('/')}>Connexion</button>
+        <button onClick={() => window.location.assign('/signup')}>Connexion</button>
       </div>
 
       { !nextStep.show ? (
