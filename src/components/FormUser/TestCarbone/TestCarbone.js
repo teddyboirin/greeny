@@ -69,7 +69,7 @@ function TestCarbone() {
           },
           {
             "idRep": "B",
-            "reponse": "Quelques fois par moi",
+            "reponse": "Quelques fois par mois",
             "points": 3,
           },
           {
@@ -86,7 +86,7 @@ function TestCarbone() {
       },
       {
         id: 3,
-        question: "Quelle surface de votre habitat ?",
+        question: "Quelle surface fait votre habitat ?",
         answers: [
           {
             "idRep": "A",
@@ -116,7 +116,7 @@ function TestCarbone() {
         answers: [
           {
             "idRep": "A",
-            "reponse": "Electrique",
+            "reponse": "Électrique",
             "points": 4,
           },
           {
@@ -147,12 +147,12 @@ function TestCarbone() {
           },
           {
             "idRep": "B",
-            "reponse": "Un peut la voiture et autre (bus, à pied, ...)",
+            "reponse": "Un peut la voiture et autres (bus, à pied, ...)",
             "points": 3,
           },
           {
             "idRep": "C",
-            "reponse": "Plutôt transports en commun",
+            "reponse": "Plutôt transports en communs",
             "points": 2,
           },
           {

@@ -1,0 +1,58 @@
+.assoc_image {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+
+.assoc_bloc {
+  position: relative;
+  width: fit-content;
+  display: flex;
+}
+.assoc_bloc:nth-of-type(2) {
+  margin-top: -3rem;
+}
+.assoc_bloc:nth-of-type(3) {
+  margin-top: -5rem;
+}
+
+.assoc_info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.assoc_info p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.assoc_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.assoc_container button {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  background: #02C39A;
+  border: none;
+  font-size: 18px;
+  width: 200px;
+  border-radius: 10px;
+}
+.assoc_container button a {
+  color: #FFF;
+}
+
+.circle {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=assoc.css.map */
