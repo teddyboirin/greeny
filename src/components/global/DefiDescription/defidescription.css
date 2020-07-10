@@ -1,0 +1,227 @@
+/* EXEMPLE */
+/*
+
+|| IF BACKGROUND MASK ||
+
+.class{
+	@include maskIconCoord(2,4,5);
+}
+
+*/
+/* EXEMPLE */
+/*
+
+|| IF BACKGROUND MASK ||
+
+.class{
+	@include bgIconCoord(19, $col, $row)
+}
+
+*/
+.DefiDescription {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media (min-width: 850px) {
+  .DefiDescription {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+  }
+}
+
+.DefiChecked {
+  display: flex;
+  min-height: 100vh;
+}
+
+.DefiDescription, .DefiChecked {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.DefiChecked {
+  background: #C0EBD1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.DefiChecked h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.DefiChecked h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.DefiChecked_points {
+  color: #02C39A;
+  height: 5rem;
+  width: 5rem;
+  border: 2px dashed #02C39A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: relative;
+  margin: 40px 0;
+}
+@media (min-width: 850px) {
+  .DefiChecked_points {
+    margin: 70px 0;
+  }
+}
+.DefiChecked_points span {
+  position: absolute;
+}
+.DefiChecked_points span:first-child {
+  top: -7px;
+  right: 15px;
+  opacity: 0.8;
+}
+.DefiChecked_points span:last-child {
+  top: -25px;
+  right: 3px;
+  opacity: 0.5;
+}
+
+.DefiChecked_button {
+  border: 2px solid #02C39A;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 850px) {
+  .DefiChecked_button {
+    padding: 20px 70px;
+    font-size: 22px;
+  }
+}
+.DefiChecked_button:hover {
+  cursor: pointer;
+}
+.DefiChecked_button:hover .DefiChecked_button_hover {
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.DefiChecked_button_hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #02C39A;
+  border-radius: 50px;
+  border: 2px solid #02C39A;
+  transform: translateX(-88%);
+  font-weight: bold;
+  transition: transform 0.8s;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  display: none;
+}
+@media (min-width: 850px) {
+  .DefiChecked_button_hover {
+    display: flex;
+  }
+}
+.DefiChecked_button_hover::after {
+  background-size: 600% auto;
+  background-position: 0% 40%;
+  height: 40px;
+  width: 40px;
+  content: "";
+  background-image: url("../../../assets/spritesheet.svg");
+  position: absolute;
+  right: 7px;
+}
+
+.DefiDescription_part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #FFF;
+}
+@media (min-width: 850px) {
+  .DefiDescription_part {
+    width: 50vw;
+    height: 100vh;
+  }
+}
+.DefiDescription_part h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+.DefiDescription_part p {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+.DefiDescription_part_1 > div {
+  padding: 1.5rem;
+}
+@media (min-width: 850px) {
+  .DefiDescription_part_1 > div {
+    padding: 0 5rem;
+    max-height: 80vh;
+    overflow: scroll;
+  }
+}
+
+.DefiDescription_part_2 {
+  background: #C0EBD1;
+  align-items: center;
+  padding: 1.5rem;
+}
+.DefiDescription_part_2 h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.DefiDescription_part_2 button {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  background: #02C39A;
+  border: none;
+  color: #FFF;
+  font-size: 18px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.DefiDescription_part_2 button:hover {
+  cursor: pointer;
+}
+.DefiDescription_part_2 button:focus {
+  outline: none;
+}
+@media (min-width: 850px) {
+  .DefiDescription_part_2 button {
+    margin: 100px 0;
+  }
+}
+.DefiDescription_part_2 > div {
+  color: #02C39A;
+  height: 5rem;
+  width: 5rem;
+  border: 3px dashed #02C39A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=defidescription.css.map */

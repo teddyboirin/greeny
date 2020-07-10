@@ -12,6 +12,7 @@ const Defis = lazy(() => import('../Defis/Defis'));
 const Assoc = lazy(() => import('../Assoc/Assoc'));
 const Favoris = lazy(() => import('../Favoris/Favoris'));
 const Account = lazy(() => import('../Account/Account'));
+const OnBoarding = lazy(() => import('../OnBoarding/OnBoarding'));
 const SignUp = lazy(() => import('../FormUser/SignUp/SignUp'));
 const TestCarbone = lazy(() => import('../FormUser/TestCarbone/TestCarbone'));
 const DefisCategory = lazy(() => import('../Defis/DefisCategory/DefisCategory'));
@@ -60,11 +61,14 @@ function Routing() {
              <Route path="/item/:id">
               <DefiDescription />
             </Route>
-            <Route path="/defis">
+              <Route path="/signup">
+                  <SignUp />
+              </Route>
+              <Route path="/defis">
               <Defis />
             </Route>
             <Route path="/">
-              <SignUp />
+              <OnBoarding />
             </Route>
           </Switch>
         </Suspense>

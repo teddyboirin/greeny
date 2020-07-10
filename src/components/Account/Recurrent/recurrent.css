@@ -1,0 +1,37 @@
+.recurrence {
+  height: 500px;
+  overflow: scroll;
+}
+.recurrence .defi {
+  width: 36rem;
+  height: 4rem;
+  flex-direction: row;
+  align-items: center;
+}
+.recurrence .defi:first-of-type {
+  margin-top: 0;
+}
+.recurrence .defi .defi_text {
+  color: #000;
+  font-weight: bold;
+  width: 56%;
+}
+.recurrence .defi_top .defi_bfr:before {
+  content: none;
+}
+.recurrence .defi_top div:last-child {
+  height: 3.438rem;
+  width: 3.438rem;
+  font-size: 0.938rem;
+}
+.recurrence .defi_bottom .defi_bfr:before {
+  transform: rotate(-90deg);
+}
+
+@media screen and (min-width: 786px) {
+  .recurrence {
+    margin: 0 7.563rem 2.563rem 0;
+  }
+}
+
+/*# sourceMappingURL=recurrent.css.map */

@@ -10,13 +10,13 @@ function Defis(){
         name: 'alimentation'
       },
       {
-        name: 'energie'
+        name: 'énergie'
       },
       {
-        name: 'dechets'
+        name: 'déchets'
       },
       {
-        name: 'deplacements'
+        name: 'déplacements'
       },
       {
         name: 'diy'
@@ -32,7 +32,7 @@ function Defis(){
    
     <div className="defis">
 
-        <div>
+        <div className="container_defis">
           <h1 className="page_title">Choisi une catégorie<br/>pour ton défi du jour</h1>
           <div className="defis_categ_container">
             {categories[0].categories.map((category, i) => {
