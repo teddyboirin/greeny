@@ -45,7 +45,7 @@ function Categories(){
   }
 
   return(
-    <div>
+    <div className="defis_categ_right">
       <div className="defis_categ_container">
         <Category categ="Alimentation" points={totalPoints + 'pts'}/>
         <Category categ="Énergie" points={totalPoints + 'pts'}/>

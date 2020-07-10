@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
 
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 798px) {
       position: static;
     }
 
@@ -23,9 +23,11 @@
       margin-top: 6rem;
 
 
-      @media screen and (max-width: 1023px) {
+      @media screen and (max-width: 798px) {
         text-align: center;
         margin: 0;
+        font-size: 3rem;
+
       }
     }
   }
@@ -50,6 +52,19 @@
       margin-left: 18rem;
       position: absolute;
       z-index: -1;
+    }
+
+    @media screen and (max-width: 1023px) {
+      justify-content: center;
+      position: relative;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        margin-left: 0 !important;
+      }
     }
 
     &:after {
@@ -82,6 +97,7 @@
     border-radius: 44px;
     margin-bottom: 2rem;
     cursor: pointer;
+
 
     h3 {
       padding: .5rem;
@@ -129,8 +145,24 @@
       transform: translateX(-50%);
     }
   }
+  @media screen and (max-width: 1023px) {
+    .defis_categ_container {
+      max-width: unset;
+      justify-content: center;
+    }
 
-  .defis_categ_container {
-    max-width: unset;
+    .defis_categ_right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .total_points {
+        margin:  1rem auto 0;
+      }
+    }
+
+    .account_tab {
+      margin: 1rem auto 2rem;
+    }
   }
 }

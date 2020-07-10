@@ -27,6 +27,11 @@ $bgColors: $lightPink, $lightYellow, $lightGreen, $lightBlue, $lightRed, $lightO
       height: 1.875rem;
     }
   }
+
+  @media screen and (min-width: 1024px) and (max-width: 1024px) {
+    width: 8.75rem;
+    height: 10.75rem;
+  }
 }
 
 @each $bgColor in $bgColors {

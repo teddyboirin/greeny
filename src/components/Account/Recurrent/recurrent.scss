@@ -41,3 +41,14 @@
       margin: 0 7.563rem 2.563rem 0;
   }
 }
+
+@media screen and (max-width: 1023px) {
+  .defi_text {
+    width: auto !important;
+    font-size: 15px !important;
+  }
+
+  .defi {
+    width: 77% !important;
+  }
+}
